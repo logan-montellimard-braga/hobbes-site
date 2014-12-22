@@ -1,0 +1,37 @@
+fr:
+  simple_form:
+    "yes": 'Oui'
+    "no": 'Non'
+    required:
+      text: 'requis'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Formulaire rempli incorrectement."
+    # Labels and hints examples
+    labels:
+      defaults:
+        tag_list: "Tags"
+        username: "Nom d'utilisateur"
+        content: "Contenu"
+        title: "Sujet"
+        password: 'Mot de passe'
+        password_confirmation: 'Confirmation'
+        remember_me: " Se souvenir de moi"
+      user:
+        new:
+          username: "Nom d'utilisateur"
+          email: "Email"
+          remember_me: " Se souvenir de moi"
+        edit:
+          username: "Nom d'utilisateur"
+          email: 'Nouvel email'
+          current_password: 'Mot de passe actuel'
+        remember_me: " Se souvenir de moi"
+    hints:
+      defaults:
+        username: "Nom d'utilisateur"
+        password: "Mot de passe ; évitez les caractères exotiques"
+
