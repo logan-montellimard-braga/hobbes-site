@@ -1,7 +1,10 @@
 !!!
 %html
   %head
-    %title= (yield :title) + " | Hobbes · Application de prise de cours pour les étudiants"
+    - base_title = 'Hobbes · Application de prise de cours pour les étudiants'
+    - separator = ' | '
+    - title = yield(:title) != '' ? yield(:title) + separator + base_title : base_title
+    %title= title
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
