@@ -1,11 +1,14 @@
 !!!
 %html
   %head
-    %title Site
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %title= (yield :title) + " | Hobbes · Application de prise de cours pour les étudiants"
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %body
+
+  %body{:class => yield(:background)}
     = flash[:notice] if flash[:notice]
     = flash[:alert] if flash[:alert]
+
     = yield
+
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true

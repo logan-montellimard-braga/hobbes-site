@@ -9,7 +9,7 @@ fr:
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Formulaire rempli incorrectement."
+      default_message: "Les informations renseignées n'ont pas pu être acceptées."
     # Labels and hints examples
     labels:
       defaults:
@@ -32,6 +32,6 @@ fr:
         remember_me: " Se souvenir de moi"
     hints:
       defaults:
-        username: "Nom d'utilisateur"
-        password: "Mot de passe ; évitez les caractères exotiques"
+        # username: "Nom d'utilisateur"
+        # password: "Mot de passe ; évitez les caractères exotiques"
 

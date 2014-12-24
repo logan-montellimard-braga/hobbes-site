@@ -15,6 +15,9 @@ fr:
       not_locked: "n'était pas verrouillé(e)"
 
   devise:
+    omniauth:
+      user:
+        success: "Connexion acceptée avec succès."
     signed_up: "Votre inscription a été enregistrée."
     failure:
       already_authenticated: "Vous êtes déjà identifié."
