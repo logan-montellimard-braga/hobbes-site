@@ -4,6 +4,13 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :users
+
+  HighVoltage.configure do |config|
+    config.home_page = 'home'
+    config.route_drawer = HighVoltage::RouteDrawers::Root
+  end
+  get 'guides' => 'high_voltage/pages#show', id: 'guides/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -41,7 +41,7 @@ gem 'haml'
 gem 'haml-rails'
 gem "twitter-bootstrap-rails"
 gem 'simple_form'
-gem 'font-awesome-rails'
+# gem 'font-awesome-rails'
 
 gem 'devise'
 gem 'omniauth'
@@ -51,6 +51,7 @@ gem 'omniauth-linkedin'
 gem 'omniauth-github'
 
 gem 'activeadmin', github: 'activeadmin'
+gem 'high_voltage', '~> 2.2.1'
 
 gem 'friendly_id'
 gem 'acts-as-taggable-on'
