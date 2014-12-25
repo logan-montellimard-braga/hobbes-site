@@ -2,6 +2,9 @@ nav {
   height: 80px;
   position: fixed;
   top: 0;
+  z-index: 999;
+  box-shadow: none;
+  border-bottom: 1px solid #eeeeee;
 }
 
 nav ul li:hover, .dropdown-content li:hover, ul.side-nav li:hover {
@@ -14,11 +17,27 @@ nav a, nav ul a, .dropdown-content a, nav .brand-logo, ul.side-nav li a {
   font-weight: 500;
   padding-top: 8px;
   padding-bottom: 8px;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  font-size: 1.05em;
 
   &.active {
     color: #8bc34a;
     font-weight: bold;
   }
+
+}
+
+nav .title {
+  @extend .brown-text, .darken-3;
+  font-family: "Open Sans";
+  font-size: 1.5em;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  position: relative;
+  font-weight: bold;
+  left: 75px;
+  line-height: 75px;
 }
 
 nav img.brand-logo {
@@ -39,6 +58,15 @@ nav img.brand-logo {
   body.nav-on {
     margin-top: 20px;
   }
+  ul.side-nav {
+    box-shadow: none;
+    border-right: 1px solid #eeeeee;
+  }
+}
+
+.dropdown-content {
+  box-shadow: none;
+  border: 1px solid #eeeeee;
 }
 
 .dropdown-content li {

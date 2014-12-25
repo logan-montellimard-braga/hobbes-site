@@ -6,16 +6,15 @@
     = nav_link "Communauté", page_path('community')
   %li.divider
   %li
-    = nav_link "Se connecter", new_user_session_path
-  %li
-    = nav_link "S'inscrire", new_user_registration_path
+    = nav_link_member
 
 %nav.white
   .nav-wrapper
     .row
-      .col.s12.m10.offset-m1
-        = link_to "Hobbes", root_path, class: :'brand-logo hide-on-large-only'
-        = logo_link_to_root "brand-logo hide-on-med-and-down"
+      .col.s12.l8.offset-l2
+        -# = link_to "Hobbes", root_path, class: :'brand-logo hide-on-large-only'
+        = logo_link_to_root "brand-logo "
+        -# %span.title.hide-on-med-and-down Hobbes
         %ul#nav-mobile.right.side-nav
           %li
             = nav_link "hobbes", root_path
