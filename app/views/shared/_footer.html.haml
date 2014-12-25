@@ -1,20 +1,47 @@
 %footer.grey.darken-3
+  -# .row.brown.white-text.utilities
+  -#   .container
+  -#     .col.s12
+  -#       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
   .container
-    .row
-      .col.l6.s12
-        %h5.white-text Footer Content
-        %p.grey-text.lighten-4 You can use rows and columns here to organize your footer content.
-      .col.l4.offset-l2.s12
-        %h5.white-text Links
-        %li
-          %a.grey-text.lighten-3{:href => "#!"} Link 1
-        %li
-          %a.grey-text.lighten-3{:href => "#!"} Link 2
-        %li
-          %a.grey-text.lighten-3{:href => "#!"} Link 3
-        %li
-          %a.grey-text.lighten-3{:href => "#!"} Link 4
+    .row.grey-text.links
+      .col.m3.hide-on-small-only.image
+        = image_tag "http://placehold.it/200x200", class: :'responsive-img'
+      .col.m3.s12.grey-text
+        %h5 Plan du site
+        %ul
+          %li
+            %a.grey-text{:href => "#!"} Renseignements
+          %li
+            %a.grey-text{:href => "#!"} T&eacute;l&eacute;chargements
+          %li
+            %a.grey-text{:href => "#!"} Documentation
+          %li
+            %a.grey-text{:href => "#!"} Communaut&eacute;
+      .col.m3.s12
+        %h5 Le projet
+        %ul
+          %li
+            %a.grey-text{:href => "#!"} Code source
+          %li
+            %a.grey-text{:href => "#!"} Code source (site web)
+          %li
+            %a.grey-text{:href => "#!"} Contribuer
+      .col.m3.s12
+        %h5 Addendum
+        %ul
+          %li
+            %a.grey-text{:href => "#!"} Contact
+          %li
+            %a.grey-text{:href => "#!"} Licence
   .footer-copyright.darken-4
     .container.grey-text
-      © 2014 Copyright Text
-      %a.grey-text.lighten-4.right{:href => "#!"} More Links
+      = link_to "Hobbes", root_path, class: :name
+      %span.grey-text.darken-1.right.copy &copy; 2015 &middot; Tous droits r&eacute;serv&eacute;s
+      %ul.authors
+        %li
+          = link_to "Logan Braga", "http://loganbraga.fr", target: :_blank
+        %li
+          = link_to "Maxime Guillermet", "http://maxime-guillermet.com/", target: :_blank
+        %li
+          = link_to "Marie Nuel", "http://marienuel.com", target: :_blank
