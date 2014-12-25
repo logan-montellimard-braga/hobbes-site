@@ -1,0 +1,28 @@
+.light-green-bg {
+  background: #8bc34a;
+  background: url('/assets/background_vert.png') center center fixed;
+  background-size: cover;
+}
+
+section {
+  padding: 80px 0;
+  font-family: "Open Sans";
+
+  h1, h2 {
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 1.2rem;
+    font-variant: small-caps;
+    text-transform: lowercase;
+  }
+  h6 {
+    font-weight: 300;
+    font-size: 1.1rem;
+    word-spacing: 0.2rem;
+    letter-spacing: 0.05rem;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: white;
+    text-align: center;
+  }
+}

@@ -1,5 +1,5 @@
 - provide :title, "Inscription"
-- provide :background, "light-green"
+- provide :background, "light-green-bg nav-off footer-off"
 
 .container
   %br
@@ -7,7 +7,7 @@
     .col.s12.m6.offset-m3.z-depth-1.white
       .sign-in-card
         .center.logo
-          = link_to image_tag("hobbes_logo_only.png", class: :'responsive-img'), root_path
+          = logo_link_to_root "responsive-img"
           %h4.light-green-text.darken-1 Inscription
           %h6.grey-text Hobbes &middot; Acc&egrave;s &agrave; la communaut&eacute;
         %br

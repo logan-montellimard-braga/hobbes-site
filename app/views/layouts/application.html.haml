@@ -6,12 +6,16 @@
     - title = yield(:title) != '' ? yield(:title) + separator + base_title : base_title
     %title= title
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    %link{:href => 'http://fonts.googleapis.com/css?family=Open+Sans:800,700,400,300', rel: :stylesheet, type: :'text/css'}
     = csrf_meta_tags
 
   %body{:class => yield(:background)}
-    = flash[:notice] if flash[:notice]
-    = flash[:alert] if flash[:alert]
+    -# = render 'shared/preloader'
+    = render 'shared/navbar'
+    = render 'shared/flash'
 
     = yield
+
+    = render 'shared/footer'
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true

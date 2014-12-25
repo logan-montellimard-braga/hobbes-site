@@ -280,7 +280,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
-    turbolinks (1.1.1)
+    turbolinks (2.5.3)
       coffee-rails
     twitter-bootstrap-rails (3.2.0)
       actionpack (~> 4.1)
@@ -342,7 +342,7 @@ DEPENDENCIES
   spork-rails (= 4.0.0)
   sprockets
   sqlite3
-  turbolinks (= 1.1.1)
+  turbolinks (~> 2.5.3)
   twitter-bootstrap-rails
   uglifier (= 2.1.1)
   unicorn

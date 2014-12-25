@@ -1,0 +1,46 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body.nav-on {
+  margin-top: 80px;
+}
+
+::-moz-selection {
+  color: white;
+  background: #8bc34a;
+}
+
+::selection {
+  color: white; 
+  background: #8Bc34a;
+}
+
+html.turbolinks-progress-bar::before {
+  background-color: #795548 !important;
+  height: 2px !important;
+}
+
+#preloader {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: 999;
+
+  .preloader-wrapper {
+    position: fixed;
+    top: 43vh;
+    left: 47vw;
+  }
+}
+
+.btn i, .btn-flat i {
+  font-size: 1em;
+}

@@ -1,0 +1,11 @@
+- if flash[:alert]
+  :javascript
+    document.addEventListener('DOMContentLoaded', function() {
+      toast("<i class='mdi-alert-warning'></i>&nbsp;<span>#{flash[:alert]}</span>")
+    });
+
+- if flash[:notice]
+  :javascript
+    document.addEventListener('DOMContentLoaded', function() {
+      toast("<i class='mdi-action-done'></i>&nbsp;<span>#{flash[:notice]}</span>")
+    });
