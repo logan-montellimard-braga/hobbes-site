@@ -1,6 +1,131 @@
-%section#main.light-green-bg
-  %h1 Hobbes
-  %h6 la prise de notes en grande classe &nbsp;
+%section#main.light-green-bg.center
+  .container
+    .row
+      %h1 Hobbes
+      %h6 la prise de notes en grande classe &nbsp;
+  #code_image
+    = image_tag "http://placehold.it/700x350", class: :'responsive-img z-depth-2'
 
-%section
-  %h1 Foo
+%section#actions
+  .container
+    .row
+      .col.s12.center
+        %a{href: page_path('download'), class: :'tooltipped waves-effect waves-light btn btn-flat btn-large white-text light-green darken-1', :'data-tooltip' => 'Windows, GNU/Linux, OSX'}
+          TÉLÉCHARGER
+        &nbsp;
+        %a{href: page_path('guides'), class: :'waves-effect waves-light btn btn-flat btn-large white-text brown'}
+          GUIDES
+      .col.s6.offset-s2.center
+        %a{href: "#!", class: :'grey-text darken-3 uppercase small-caps link'}
+          %i.mdi-action-label-outline
+          Code source
+
+%section#features
+  .container
+    .row
+      .col.offset-m1
+        %h5.arrowed-title Une nouvelle fa&ccedil;on de prendre ses cours
+      .col.m6.s12.offset-m1
+        %p
+          Hobbes est un langage de prise de notes simple, expressif et r&eacute;silient,
+          permettant de compiler vos cours en site local autonome et optimis&eacute; pour
+          les p&eacute;riodes de r&eacute;vision.
+        %p
+          Vous avez une vie bien remplie, et nous aussi : Hobbes a &eacute;t&eacute; con&ccedil;u
+          afin d'&ecirc;tre utilisable quasiment imm&eacute;diatement, sans d&eacute;lai d'apprentissage.
+          Prenez vos cours instinctivement dans un langage souple, qui s'adapte &agrave; vos capacit&eacute;s.
+        %p
+          Hobbes est modulable et extensible : si vous connaissez HTML, vous pouvez modifier
+          facilement votre site local g&eacute;n&eacute;r&eacute;, cr&eacute;er vos propres
+          templates et ajouter vos fonctionnalit&eacute;s.
+        .links
+          %a{href: page_path('infos')} + d'infos
+          %a{href: page_path('guides')} d&eacute;marrage rapide
+      .col.m4.hide-on-small-only.text-right
+        = image_tag "http://placehold.it/220x250", class: :'responsive-img'
+
+%section#platforms
+  .container.text-right
+    .row
+      .col.offset-m1.s12.m10
+        %h5.arrowed-title Portabilit&eacute; ? Check.
+      .col.hide-on-small-only.m3.offset-m1
+        = image_tag "http://placehold.it/220x250", class: :'responsive-img'
+      .col.s12.m7
+        %p
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+          vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+          no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        %p
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+          vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+          no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+%section#quickstart
+  .container.text-left
+    .row
+      .col.offset-m1
+        %h5.arrowed-title D&eacute;marrez en quelques minutes
+      .col.m5.s12.offset-m1
+        %p
+          Hobbes est un langage de prise de notes simple, expressif et r&eacute;silient,
+          permettant de compiler vos cours en site local autonome et optimis&eacute; pour
+          les p&eacute;riodes de r&eacute;vision.
+        %p
+          Hobbes est modulable et extensible : si vous connaissez HTML, vous pouvez modifier
+          facilement votre site local g&eacute;n&eacute;r&eacute;, cr&eacute;er vos propres
+          templates et ajouter vos fonctionnalit&eacute;s.
+        .links
+          %a{href: page_path('infos')} + d'infos
+          %a{href: page_path('guides')} d&eacute;marrage rapide
+      .col.m5.hide-on-small-only.text-right
+        = image_tag "http://placehold.it/320x270", class: :'responsive-img'
+
+%section#customize
+  .container.text-right
+    .row
+      .col.s12.m11
+        %h5.arrowed-title Faîtes comme chez vous
+      .col.hide-on-small-only.m2.offset-m1
+        = image_tag "http://placehold.it/200x180", class: :'responsive-img'
+      .col.s12.m8
+        %p
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+          vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+          no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+%section#community
+  .container.center
+    .row
+      .col.s12
+        %h6 Hobbes &middot; Communaut&eacute;
+        %h5 Coop&eacute;rez avec vos coll&egrave;gues
+    .row
+      .col.s12
+        %p
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+          vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+          no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+%section#video
+  .container.text-left
+    .row
+      .col.s12.m8
+        %h5.arrowed-title Hobbes en action
+      .col.m9.s12
+        = image_tag "http://placehold.it/650x280", class: :'responsive-img z-depth-1'
+      .col.m3.hide-on-small-only.content
+        %h6 Contenu
+        %ul
+          %li
+            %a{class: :tooltipped, :'data-tooltip' => '00:00', :'data-position' => 'top'} Installation
+          %li
+            %a{class: :tooltipped, :'data-tooltip' => '02:05', :'data-position' => 'top'} D&eacute;marrage rapide
+          %li
+            %a{class: :tooltipped, :'data-tooltip' => '04:20', :'data-position' => 'top'} Exemples d'utilisation
+          %li
+            %a{class: :tooltipped, :'data-tooltip' => '06:10', :'data-position' => 'top'} Pour aller plus loin

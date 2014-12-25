@@ -44,3 +44,27 @@ html.turbolinks-progress-bar::before {
 .btn i, .btn-flat i {
   font-size: 1em;
 }
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.small-caps {
+  font-variant: small-caps;
+}

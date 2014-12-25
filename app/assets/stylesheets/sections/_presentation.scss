@@ -1,5 +1,110 @@
+.arrowed-title:before {
+  content: url('http://placehold.it/20x20');
+  margin-right: 5px;
+}
+
 #main {
   padding-top: 90px;
-  min-height: 100vh;
+  min-height: 550px;
+  height: 90vh;
   box-sizing: border-box;
+
+  #code_image {
+    width: 100%;
+    min-height: 550px;
+    height: 90vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    img {
+      display: block;
+      margin: auto;
+      position: absolute;
+      bottom: -8vh;
+    }
+  }
+}
+
+#actions {
+  padding-top: 100px;
+  padding-bottom: 30px;
+
+  a.btn {
+    font-family: "Roboto";
+    font-weight: 300;
+    font-variant: small-caps;
+    font-size: 2.2em;
+    line-height: 75px;
+    height: 70px;
+  }
+
+  a.link {
+    &:hover {
+      color: #666 !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    a.btn {
+      font-size: 1em;
+      line-height: 50px;
+      height: 45px;
+    }
+  }
+}
+
+#features, #quickstart {
+  background: #f1f1f1;
+
+  h1, h2, h3, h4, h5, h6, a, p {
+    color: #666;
+    text-align: left;
+  }
+  h5 {
+    font-weight: 600;
+  }
+  p {
+    font-weight: 300;
+    font-size: 1.05em;
+  }
+
+  .links {
+    text-align: right;
+    a {
+      @extend .light-green-text;
+      font-weight: 500;
+      padding-right: 10px;
+
+      &:hover {
+        @extend .light-green-text, .darken-1;
+      }
+    }
+  }
+}
+
+#video, #customize, #platforms {
+  h1, h2, h3, h4, h5, h6, a, p, li {
+    color: #666;
+    font-weight: 600;
+  }
+  p {
+    font-weight: 300;
+    font-size: 1.05em;
+  }
+  h5 {
+    margin-bottom: 20px;
+  }
+  h6 {
+    margin: 0;
+  }
+  li a {
+    font-weight: 400;
+  }
+}
+
+#community {
+  background: url('background_vert.png');
+  color: white;
 }
