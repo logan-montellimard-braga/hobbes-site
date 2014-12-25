@@ -5,8 +5,9 @@
     - separator = ' | '
     - title = yield(:title) != '' ? yield(:title) + separator + base_title : base_title
     %title= title
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'application', media: 'all'
     %link{:href => 'http://fonts.googleapis.com/css?family=Open+Sans:800,700,400,300', rel: :stylesheet, type: :'text/css'}
+    = favicon_link_tag 'favicon.ico'
     = csrf_meta_tags
 
   %body{:class => yield(:background)}
@@ -18,4 +19,4 @@
 
     = render 'shared/footer'
 
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application'
