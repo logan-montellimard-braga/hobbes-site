@@ -33,7 +33,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '2.1.1'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails', '~> 2.1.1'
-gem 'turbolinks', '~> 2.5.3'
+# gem 'turbolinks', '~> 2.5.3'
 gem 'jbuilder', '~> 2.0'
 # gem 'bcrypt-ruby', '~>3.1.7'
 
