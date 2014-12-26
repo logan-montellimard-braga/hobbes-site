@@ -7,7 +7,7 @@ module ApplicationHelper
     class_name = current_page?(link_path) ? 'active' : nil
 
     content_tag(:li) do
-      link_to link_text, link_path, :class => class_name, :method => method
+      link_to link_text, link_path, :class => class_name.to_s + " waves-effect", :method => method
     end
   end
 
