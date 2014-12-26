@@ -68,3 +68,41 @@ html.turbolinks-progress-bar::before {
 .small-caps {
   font-variant: small-caps;
 }
+
+.btn-border {
+  border: 1px solid white;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: none;
+  }
+}
+
+.btn-background-green {
+  background: url('background_vert_button.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.btn-background-brown {
+  background: url('background_marron_button_2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.scroll-bg {
+  background-attachment: scroll !important;
+}
+
+.fixed-bg {
+  background-attachment: fixed !important;
+}
+
+h1, h2, h3, h4, h5, h6, a, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+a.submit {
+  display: none;
+}
