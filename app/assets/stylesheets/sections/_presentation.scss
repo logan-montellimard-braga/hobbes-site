@@ -105,6 +105,52 @@
 }
 
 #community {
-  background: url('background_vert.png');
+  @extend .light-green, .darken-4;
+  background-image: url('map.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
+  // background-position: center -150px;
+}
+
+#quickstart {
+  @extend .brown, .darken-2;
+  h1, h2, h3, h4, h5, h6, a, p, li {
+    color: white;
+  }
+  ol, ul {
+    margin: 20px 0;
+    padding-left: 15px;
+  }
+  li {
+    list-style-type: none;
+    font-weight: 300;
+    font-size: 1.2em;
+
+    &:before {
+      content: "»";
+      margin-right: 10px;
+    }
+  }
+
+  .rocket {
+    width: 250px;
+  }
+}
+.video:hover {
+  @extend .z-depth-2;
+}
+
+.last-call {
+  margin-top: 50px;
+  margin-bottom: 0;
+
+  hr {
+    border-top: 1px solid #eeeeee;
+    margin-bottom: 50px;
+  }
+}
+
+.band {
+  margin: 30px 0;
 }
