@@ -11,3 +11,23 @@
   border-right: 2px solid #8bc34a;
   border-bottom: 2px solid #8bc34a;
 }
+
+input:-webkit-autofill {
+  -webkit-box-shadow:0 0 0 50px white inset !important;
+  -webkit-text-fill-color: #333;
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 50px white inset !important;
+  -webkit-text-fill-color: #666;
+}
+
+form {
+  a {
+    &:not(.btn) {
+      &:hover {
+        color: #666 !important;
+      }
+    }
+  }
+}
