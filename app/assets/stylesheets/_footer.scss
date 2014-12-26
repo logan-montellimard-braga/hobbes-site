@@ -3,6 +3,14 @@ footer {
   padding-top: 25px;
   font-family: "Open Sans";
 
+  .image {
+    text-align: left;
+    img {
+      width: 150px;
+      opacity: 0.4;
+    }
+  }
+
   .utilities {
     padding: 25px;
     margin-bottom: 30px;
@@ -12,7 +20,6 @@ footer {
     font-weight: 400;
     text-transform: lowercase;
     font-variant: small-caps;
-    // padding: 15px 0;
 
     a {
       &:hover {

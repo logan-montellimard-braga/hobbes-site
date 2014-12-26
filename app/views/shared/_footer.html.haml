@@ -5,10 +5,10 @@
   -#       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
   .container
     .row.grey-text.links
-      .col.m3.hide-on-small-only.image
-        = image_tag "http://placehold.it/200x200", class: :'responsive-img'
-      .col.m3.s12.grey-text
-        %h5 Plan du site
+      .col.m3.hide-on-med-and-down.image
+        = image_tag "logo_blanc.png", class: :'responsive-img'
+      .col.l3.m4.s12.grey-text
+        %h5 Liens importants
         %ul
           %li
             %a.grey-text{:href => "#!"} Renseignements
@@ -18,7 +18,7 @@
             %a.grey-text{:href => "#!"} Documentation
           %li
             %a.grey-text{:href => "#!"} Communaut&eacute;
-      .col.m3.s12
+      .col.l3.m4.s12
         %h5 Le projet
         %ul
           %li
@@ -27,9 +27,11 @@
             %a.grey-text{:href => "#!"} Code source (site web)
           %li
             %a.grey-text{:href => "#!"} Contribuer
-      .col.m3.s12
+      .col.l3.m4.s12
         %h5 Addendum
         %ul
+          %li
+            %a.grey-text{:href => "#!"} À Propos
           %li
             %a.grey-text{:href => "#!"} Contact
           %li
