@@ -26,7 +26,10 @@
                 = f.input :password_confirmation, required: true
           .row.form-actions
             .col.s12
-              = button_tag(type: 'submit', class: "btn btn-flat btn-large white-text brown col s12") do
+              = link_to "#", class: :'submit btn btn-flat btn-large white-text brown col s12 btn-background-brown waves-effect waves-light', 'data-id' => 'new_user' do
+                Inscription
+                %i.mdi-content-send
+              = button_tag(type: 'submit', class: "submit btn btn-flat btn-large white-text brown col s12 btn-background-brown") do
                 Inscription
                 %i.mdi-content-send
 

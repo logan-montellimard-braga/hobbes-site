@@ -18,6 +18,13 @@ $(document).ready ->
   $(".button-collapse").sideNav()
   $('.tooltipped').tooltip delay: 100
 
+  $("button.submit").remove()
+  $("a.submit").show()
+  $('a.submit').click (e) ->
+    e.preventDefault()
+    console.log($("form#" + $(@).data("id")))
+    $("form#" + $(@).data("id")).submit()
+
   # $("#preloader").fadeOut 'slow'
 
   $("#main_drop a").click ->
