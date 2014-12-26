@@ -5,9 +5,18 @@
     - separator = ' | '
     - title = yield(:title) != '' ? yield(:title) + separator + base_title : base_title
     %title= title
-    = stylesheet_link_tag 'application', media: 'all'
+
+    - base_desc = 'Hobbes, application de prise de cours pour les étudiants. Écrivez vos cours dans notre langage adapté et compilez-les en site local autonome pour les révisions.'
+    - desc = yield(:desc) != '' ? yield(:desc).capitalize + '. ' + base_desc : base_desc
+    - keywords = %w(Hobbes cours notes étudiants compilateur site local templates révisions langage).join(", ")
+    %meta{name: :description, :content => desc}
+    %meta{name: :author, :content => 'Logan Braga Maxime Guillermet Marie Nuel'}
+    %meta{name: :keywords, :content => keywords}
+
     %link{:href => 'http://fonts.googleapis.com/css?family=Open+Sans:800,700,400,300', rel: :stylesheet, type: :'text/css'}
+    = stylesheet_link_tag 'application', media: 'all'
     = favicon_link_tag 'favicon.ico'
+
     = csrf_meta_tags
 
   %body{:class => yield(:background)}
@@ -18,5 +27,6 @@
     = yield
 
     = render 'shared/footer'
+    = render 'shared/noscript'
 
     = javascript_include_tag 'application'
