@@ -1,19 +1,19 @@
-%section#main.light-green-bg.center
+%section#main.light-green-bg.center.scroll-bg
   .container
     .row
       %h1 Hobbes
       %h6 la prise de notes en grande classe &nbsp;
   #code_image
-    = image_tag "http://placehold.it/700x350", class: :'responsive-img z-depth-2'
+    = image_tag "editeur.png", class: :'responsive-img z-depth-2'
 
 %section#actions
   .container
     .row
       .col.s12.center
-        %a{href: page_path('download'), class: :'tooltipped waves-effect waves-light btn btn-flat btn-large white-text light-green darken-1', :'data-tooltip' => 'Windows, GNU/Linux, OSX'}
+        %a{href: page_path('download'), class: :'tooltipped waves-effect waves-light btn btn-flat btn-large white-text light-green darken-1 btn-background-green', :'data-tooltip' => 'Windows, GNU/Linux, OSX'}
           TÉLÉCHARGER
         &nbsp;
-        %a{href: page_path('guides'), class: :'waves-effect waves-light btn btn-flat btn-large white-text brown'}
+        %a{href: page_path('guides'), class: :'waves-effect waves-light btn btn-flat btn-large white-text brown btn-background-brown'}
           GUIDES
       .col.s6.offset-s2.center
         %a{href: "#!", class: :'grey-text darken-3 uppercase small-caps link'}
@@ -42,46 +42,47 @@
           %a{href: page_path('infos')} + d'infos
           %a{href: page_path('guides')} d&eacute;marrage rapide
       .col.m4.hide-on-small-only.text-right
-        = image_tag "http://placehold.it/220x250", class: :'responsive-img'
+        = image_tag "feuille.png", class: :'responsive-img'
 
 %section#platforms
   .container.text-right
     .row
       .col.offset-m1.s12.m10
-        %h5.arrowed-title Portabilit&eacute; ? Check.
+        %h5.arrowed-title Portabilit&eacute; ? Check
       .col.hide-on-small-only.m3.offset-m1
-        = image_tag "http://placehold.it/220x250", class: :'responsive-img'
+        = image_tag "globe.png", class: :'responsive-img'
       .col.s12.m7
         %p
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-          vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-          no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          Le compilateur Hobbes est compl&egrave;tement portable, sans installation, et multi-plateformes.
+          Bas&eacute; sur la Java Virtual Machine, il peut tourner sur tous vos syst&egrave;mes favoris : Windows,
+          distributions GNU/Linux et BSD, OSX, ...
         %p
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-          vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-          no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          Prenez vos cours o&ugrave; vous voulez, quand vous voulez. Compilez-les o&ugrave; vous voulez, quand... vous
+          voyez le genre. Et parce que le site g&eacute;n&eacute;r&eacute; par le compilateur est un simple site
+          statique, devinez quoi ? Bingo. 
+          %br
+          O&ugrave; vous voulez, quand vous voulez.
 
 %section#quickstart
   .container.text-left
     .row
       .col.offset-m1
-        %h5.arrowed-title D&eacute;marrez en quelques minutes
+        %h5.arrowed-title D&eacute;marrez en quelques secondes
       .col.m5.s12.offset-m1
         %p
-          Hobbes est un langage de prise de notes simple, expressif et r&eacute;silient,
-          permettant de compiler vos cours en site local autonome et optimis&eacute; pour
-          les p&eacute;riodes de r&eacute;vision.
+          Hobbes a &eacute;t&eacute; con&ccedil;u par des &eacute;tudiants, pour des &eacute;tudiants.
+          Commencez &agrave; &eacute;crire vos cours sur le tas, comme si vous aviez fait &ccedil;a toute votre vie. Ça sera le cas, d'ailleurs.
         %p
-          Hobbes est modulable et extensible : si vous connaissez HTML, vous pouvez modifier
-          facilement votre site local g&eacute;n&eacute;r&eacute;, cr&eacute;er vos propres
-          templates et ajouter vos fonctionnalit&eacute;s.
-        .links
-          %a{href: page_path('infos')} + d'infos
-          %a{href: page_path('guides')} d&eacute;marrage rapide
+          Un cycle de travail typique avec Hobbes ?
+        %ol
+          %li &Eacute;crivez
+          %li Compilez
+          %li R&eacute;visez !
       .col.m5.hide-on-small-only.text-right
-        = image_tag "http://placehold.it/320x270", class: :'responsive-img'
+        = image_tag "rocket_white.png", class: :'responsive-img rocket'
+    .col.s12.center
+      %a{href: page_path('guides'), class: :'waves-effect waves-light btn btn-flat btn-large brown darken-4 white-text'}
+        j'essaye Hobbes gratuitement
 
 %section#customize
   .container.text-right
@@ -89,27 +90,29 @@
       .col.s12.m11
         %h5.arrowed-title Faîtes comme chez vous
       .col.hide-on-small-only.m2.offset-m1
-        = image_tag "http://placehold.it/200x180", class: :'responsive-img'
+        = image_tag "customize2.png", class: :'responsive-img'
       .col.s12.m8
         %p
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-          vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-          no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          Hobbes est flexible et mall&eacute;able. T&eacute;l&eacute;chargez et installez d'autres templates
+          et modules pour le compilateur en un clic, et appr&eacute;ciez le changement.
+        %p
+          Ou retroussez vos manches et cr&eacute;ez-les vous-m&ecirc;me.
 
 %section#community
   .container.center
     .row
       .col.s12
         %h6 Hobbes &middot; Communaut&eacute;
-        %h5 Coop&eacute;rez avec vos coll&egrave;gues
+        %h5 Collaborez avec vos coll&egrave;gues
     .row
       .col.s12
         %p
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-          vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-          no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          Partagez vos templates, modules et tutoriels avec les utilisateurs Hobbes du monde entier gr&acirc;ce au service
+          %b Hobbes Communaut&eacute;.
+        %br
+        %a{href: page_path('community'), class: :'tooltipped waves-effect waves-light btn btn-flat btn-large white-text btn-border', 'data-tooltip' => "100% gratuit !"}
+          je rejoins la communaut&eacute; Hobbes
+
 
 %section#video
   .container.text-left
@@ -117,7 +120,7 @@
       .col.s12.m8
         %h5.arrowed-title Hobbes en action
       .col.m9.s12
-        = image_tag "http://placehold.it/650x280", class: :'responsive-img z-depth-1'
+        = image_tag "video.png", class: :'responsive-img z-depth-1 video'
       .col.m3.hide-on-small-only.content
         %h6 Contenu
         %ul
@@ -129,3 +132,9 @@
             %a{class: :tooltipped, :'data-tooltip' => '04:20', :'data-position' => 'top'} Exemples d'utilisation
           %li
             %a{class: :tooltipped, :'data-tooltip' => '06:10', :'data-position' => 'top'} Pour aller plus loin
+    .row.last-call
+      %hr
+      .col.s12.center
+        %p Alors, convaincu ?
+        %a{href: page_path('guides'), class: :'waves-effect waves-light btn btn-flat btn-large light-green btn-background-green white-text'}
+          je t&eacute;l&eacute;charge hobbes
