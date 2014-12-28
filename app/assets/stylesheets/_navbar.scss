@@ -52,12 +52,12 @@ nav img.brand-logo {
 }
 
 @media (max-width: 992px) {
-  nav {
-    position: absolute;
-  }
-  body.nav-on {
-    margin-top: 20px;
-  }
+  // nav {
+  //   position: absolute;
+  // }
+  // body.nav-on {
+  //   margin-top: 20px;
+  // }
   ul.side-nav {
     box-shadow: none;
     border-right: 1px solid #eeeeee;

@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_user, only: [:edit, :update, :destroy]
 
   # GET /users/:id.:format
   def show
-    # authorize! :read, @user
+    if @user == nil
+      redirect_to :root
+      flash[:alert] = "L'utilisateur n'a pas été trouvé."
+    end
   end
 
   # GET /users/:id/edit
@@ -38,7 +42,18 @@ class UsersController < ApplicationController
 
   private
     def set_user
-      @user = User.find(params[:id])
+      if User.exists?(params[:id])
+        @user = User.find(params[:id])
+      else
+        @user = nil
+      end
+    end
+
+    def authorize_user
+      if @user != current_user
+        redirect_to :root
+        flash[:alert] = "Vous n'êtes pas autorisé."
+      end
     end
 
     def user_params

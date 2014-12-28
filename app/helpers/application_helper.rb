@@ -13,11 +13,16 @@ module ApplicationHelper
 
   def nav_link_member
     if user_signed_in?
-      return (nav_link "Profil", "#!") +
+      return (nav_link "Profil", user_path(current_user.id)) +
         (nav_link "Se déconnecter", destroy_user_session_path, :delete)
     else
       return (nav_link "Se connecter", new_user_session_path) +
         (nav_link "S'inscrire", new_user_registration_path)
     end
+  end
+
+  def avatar_url(user, size)
+    gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
+    "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
   end
 end

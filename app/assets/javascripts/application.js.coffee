@@ -17,6 +17,7 @@ $(document).ready ->
   $(".dropdown-button").dropdown hover: false
   $(".button-collapse").sideNav()
   $('.tooltipped').tooltip delay: 100
+  $('ul.tabs').tabs()
 
   $("button.submit").remove()
   $("a.submit").show()

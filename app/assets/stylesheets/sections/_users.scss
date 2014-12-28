@@ -5,3 +5,30 @@
 .logo img{
   width: 150px;
 }
+
+.profil {
+  h1, h2, h3, h4, h5, h6, a, p, li {
+    color: #666;
+  }
+  ul.tabs li.tab a {
+    @extend .grey-text;
+  }
+  ul.tabs .indicator {
+    @extend .light-green;
+  }
+
+  .infos {
+    h5, h6 {
+      line-height: 1.25em;
+    }
+  }
+  a {
+    &:hover, &.active {
+      @extend .darken-2;
+    }
+  }
+
+  hr {
+    border-top: 0px solid #efefef;
+  }
+}
