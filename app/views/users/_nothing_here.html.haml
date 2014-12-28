@@ -1,3 +1,5 @@
 .col.s12.center.nothing
   %p.grey-text.lighten-1
     Oops ! On dirait qu'il n'y &agrave; rien ici...
+  - if defined? button
+    = link_to button[0], button[1], class: :'btn btn-flat light-green btn-lg btn-background-brown white-text'
