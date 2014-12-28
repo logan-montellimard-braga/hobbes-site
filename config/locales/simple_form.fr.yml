@@ -27,7 +27,10 @@ fr:
           remember_me: " Se souvenir de moi"
         edit:
           username: "Nom d'utilisateur"
-          email: 'Nouvel email'
+          email: 'Email'
+          name: "Nom"
+          password: "Nouveau mot de passe"
+          password_confirmation: 'Confirmation du nouveau mot de passe'
           current_password: 'Mot de passe actuel'
         remember_me: " Se souvenir de moi"
     hints:

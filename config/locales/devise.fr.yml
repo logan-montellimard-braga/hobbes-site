@@ -1,7 +1,7 @@
 #########################################################################################################
 # I18n French translation for Devise (http://github.com/plataformatec/devise)
-# I18n traduction française pour Devise        
-######################################################################################################### 
+# I18n traduction française pour Devise
+#########################################################################################################
 
 fr:
   helpers:
@@ -44,20 +44,20 @@ fr:
       signed_in: "Connecté."
       signed_out: "Déconnecté."
       remember_me: 'Se souvenir de moi'
+    registrations:
+      user:
+        destroyed: "Votre compte a été supprimé. Nous espérons vous revoir bientôt."
+        signed_up: "Votre inscription est enregistrée."
+        updated: "Votre mise à jour a été prise en compte."
+      signed_up: "Votre inscription est enregistrée."
+      updated: "Votre mise à jour a été prise en compte."
+      destroyed: "Votre compte a été supprimé. Nous espérons vous revoir bientôt."
     passwords:
       send_instructions: "Vous allez recevoir un courriel contenant des instructions pour changer votre mot de passe."
       updated: "Votre mot de passe a été changé. Vous êtes maintenant connecté."
     confirmations:
       send_instructions: "Vous allez recevoir un courriel contenant des instructions pour activer votre compte."
       confirmed: "Votre compte a été activé. Vous êtes maintenant connecté."
-    registrations:
-      signed_up: "Votre inscription est enregistrée."
-      updated: "Votre mise à jour a été prise en compte."
-      destroyed: "Votre compte a été supprimé. Nous espérons vous revoir bientôt."
-      user:
-          destroyed: "Votre compte a été supprimé. Nous espérons vous revoir bientôt."
-          signed_up: "Votre inscription est enregistrée."
-          updated: "Votre mise à jour a été prise en compte."
     unlocks:
       send_instructions: "Vous allez recevoir un courriel avec des instructions pour déverrouiller votre compte."
       unlocked: "Votre compte est déverrouillé. Vous êtes maintenant connecté."
@@ -65,23 +65,23 @@ fr:
       confirmation_instructions: "Instructions de confirmation"
       reset_password_instructions: "Instructions pour changer le mot de passe"
       unlock_instructions: "Instructions pour déverrouiller le compte"
-      
+
     ##########################################################################################################
     # For generated views: By "rails generate devise_views".
     #                      Assuming to use I18n "Lazy" lookup, except for the ones under "common" namespace.
-    #                      e.g. Under views/devise/confirmations/new.html.erb, 
+    #                      e.g. Under views/devise/confirmations/new.html.erb,
     #                           <h2>Resend confirmation instructions</h2>
     #                           is changed to
     #                           <h2><%= t(".resend_confirmation_instructions") %></h2>
     #                           locally.
-    ########################################################################################################## 
+    ##########################################################################################################
     common:
       forgot_your_password?: "Mot de passe oublié ?"
       hello: "Bonjour"
       sign_in: "Se connecter"
       sign_up: "S'enregistrer"
     shared:
-      links:    
+      links:
         didnt_receive_confirmation_instructions?: "Vous n'avez pas reçu de courriel de confirmation ?"
         didnt_receive_unlock_instructions?: "Vous n'avez pas reçu de courriel de déverrouillage de votre compte ?"
     confirmations:
@@ -107,7 +107,7 @@ fr:
         unlock_account_instruction: "Cliquez sur le lien ci-dessous pour déverrouiller votre compte"
         unlock_my_account: "Déverrouiller mon compte"
     passwords:
-      edit: 
+      edit:
         change_your_password: "Changez votre mot de passe"
         change_my_password: "Changer mon mot de passe"
       new:
@@ -118,7 +118,7 @@ fr:
         # For "leave blank if you don't want to change it"
         password_instruction: "Laisser vide si vous ne voulez pas le changer"
         # For "we need your current password to confirm your changes"
-        current_password_instruction: "Vous devez saisir votre mot de passe courant pour confirmer vos changement"                
+        current_password_instruction: "Vous devez saisir votre mot de passe courant pour confirmer vos changement"
         update: "Mettre à jour"
         cancel_my_account: "Annuler mon compte"
         unhappy?: "Pas content(e) ?"
@@ -126,4 +126,4 @@ fr:
         back: "Retour"
     unlocks:
       new:
-        resend_unlock_instructions: "Renvoyez le mail pour déverrouiller mon compte"          
+        resend_unlock_instructions: "Renvoyez le mail pour déverrouiller mon compte"

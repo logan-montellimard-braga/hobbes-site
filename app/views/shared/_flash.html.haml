@@ -1,10 +1,14 @@
 - if flash[:alert]
+  - if flash[:alert] =~ /^translation missing/i
+    - flash[:alert] = t(:error_unknown)
   :javascript
     document.addEventListener('DOMContentLoaded', function() {
       toast("<i class='mdi-alert-warning'></i>&nbsp;<span>#{flash[:alert]}</span>")
     });
 
 - if flash[:notice]
+  - if flash[:notice] =~ /^translation missing/i
+    - flash[:notice] = t(:notice_unknown)
   :javascript
     document.addEventListener('DOMContentLoaded', function() {
       toast("<i class='mdi-action-done'></i>&nbsp;<span>#{flash[:notice]}</span>")
