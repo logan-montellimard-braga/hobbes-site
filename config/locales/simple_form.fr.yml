@@ -9,7 +9,7 @@ fr:
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Les informations renseignées n'ont pas pu être acceptées."
+      default_message: "Erreur lors du remplissage des données."
     # Labels and hints examples
     labels:
       defaults:

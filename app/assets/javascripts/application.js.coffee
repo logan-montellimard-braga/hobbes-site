@@ -28,6 +28,10 @@ $(document).ready ->
 
   # $("#preloader").fadeOut 'slow'
 
+  if $('form .error_notification').length > 0
+    $('form span.error').prev('.input-field').children('input').addClass 'input-error'
+    $('html, body').animate scrollTop: $('form .error_notification').offset().top - 100, 600
+
   $("#main_drop a").click ->
     @.click()
 

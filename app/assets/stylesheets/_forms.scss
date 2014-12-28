@@ -36,4 +36,29 @@ form {
     font-size: 0.85em;
     margin-top: -15px;
   }
+
+  .error_notification {
+    margin: 0 0 25px 0;
+    padding: 10px;
+    text-align: center;
+    @extend .red, .white-text;
+  }
+
+  .error {
+    font-weight: bold;
+    font-size: 0.85em;
+    display: block;
+    // @extend .red, .white-text;
+    // padding: 5px;
+    margin-top: -5px;
+  }
+
+  .form-inputs {
+    padding: 0 10px;
+  }
+
+  .input-error {
+    border-bottom: 1px solid #F44336 !important;
+    box-shadow: 0 1px 0 0 #F44336 !important;
+  }
 }
