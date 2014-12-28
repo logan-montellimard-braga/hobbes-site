@@ -1,0 +1,33 @@
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  = f.error_notification
+  .row.form-inputs
+    .row
+      .col.s12
+        = f.input :email, required: true, autofocus: false
+    .row
+      .col.s12
+        = f.input :name, required: false
+    .row
+      .col.s12
+        = f.input :location, required: false
+    .row
+      .col.s12
+        = f.input :website, required: false
+    .row
+      .col.s12
+        = f.input :password, autocomplete: "off"# hint: "laissez blanc pour laisser tel quel", required: false
+    .row
+      .col.s12
+        = f.input :password_confirmation, required: false
+    %br
+    .row
+      .col.s12
+        = f.input :current_password, required: true
+  .row.form-actions
+    .col.s12
+      = link_to "#", class: :'submit btn btn-flat btn-large white-text brown col s12 btn-background-brown waves-effect waves-light', 'data-id' => 'edit_user' do
+        Confirmer
+        %i.mdi-content-send
+      = button_tag(type: 'submit', class: "submit btn btn-flat btn-large white-text brown col s12 btn-background-brown") do
+        Confirmer
+        %i.mdi-content-send

@@ -9,23 +9,9 @@
     .row
       .col.s12.offset-m3.offset-s4
         = link_to "Profil actuel", user_path(@user.id), class: :'light-green-text'
-      .col.s4.offset-m1.m2
-        = link_to (image_tag avatar_url(@user, 110), class: :'circle responsive-img tooltipped', 'data-tooltip' => 'Modifier sur Gravatar'), "https://fr.gravatar.com/emails/", target: :_blank
-      .col.s8.m8.infos
-        %h5= name_or "Nom non renseigné"
-        %h6.grey-text= @user.email
-        %h6.grey-text.hide-on-small-only
-          %span.tooltipped{'data-tooltip' => 'Localisation'}
-            %i.mdi-maps-place
-            = location_or "N/A"
-          &nbsp;
-          %span.tooltipped{'data-tooltip' => 'Site web'}
-            %i.mdi-social-public
-            = link_to (get_domain(website_or("N/A"))), website_or("#"), class: :'grey-text', target: :_blank
-          &nbsp;
-          %span.tooltipped{'data-tooltip' => 'Dernière connexion'}
-            %i.mdi-action-history
-            = distance_of_time_in_words @user.last_sign_in_at, Time.now
+
+      = render 'users/profile', user: @user
+
     %br
     .row
       .col.s12.offset-m1.m10
@@ -36,47 +22,13 @@
       .col.s12.offset-m1.m6
         %h5 Modifier les informations
         %br
-        = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-          = f.error_notification
-          .row.form-inputs
-            .row
-              .col.s12
-                = f.input :email, required: true, autofocus: false
-            .row
-              .col.s12
-                = f.input :name, required: false
-            .row
-              .col.s12
-                = f.input :location, required: false
-            .row
-              .col.s12
-                = f.input :website, required: false
-            .row
-              .col.s12
-                = f.input :password, autocomplete: "off"# hint: "laissez blanc pour laisser tel quel", required: false
-            .row
-              .col.s12
-                = f.input :password_confirmation, required: false
-            %br
-            .row
-              .col.s12
-                = f.input :current_password, required: true
-          .row.form-actions
-            .col.s12
-              = link_to "#", class: :'submit btn btn-flat btn-large white-text brown col s12 btn-background-brown waves-effect waves-light', 'data-id' => 'edit_user' do
-                Confirmer
-                %i.mdi-content-send
-              = button_tag(type: 'submit', class: "submit btn btn-flat btn-large white-text brown col s12 btn-background-brown") do
-                Confirmer
-                %i.mdi-content-send
+        = render 'users/edit_form'
+
       .col.s12.m4.text-right
         %h5 Supprimer mon compte
         %p
           Attention, cette action est irr&eacute;versible !
-        = link_to registration_path(resource_name), data: { confirm: "Êtes-vous sûr ?" }, method: :delete, :class => 'white-text btn btn-flat red darken-1 waves-effect waves-light' do
-          %i.mdi-alert-warning
-          &nbsp;
-          Supprimer
+        = render 'users/delete_button'
 
 :javascript
   document.getElementById("edit_user").classList.remove("col")

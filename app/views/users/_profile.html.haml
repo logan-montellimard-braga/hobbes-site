@@ -1,0 +1,17 @@
+.col.s4.offset-m1.m2
+  = image_tag avatar_url(user, 110), class: :'circle responsive-img'
+.col.s8.m8.infos
+  %h5= name_or "Nom non renseigné"
+  %h6.grey-text= user.email
+  %h6.grey-text.hide-on-small-only
+    %span.tooltipped{'data-tooltip' => 'Localisation'}
+      %i.mdi-maps-place
+      = location_or "N/A"
+    &nbsp;
+    %span.tooltipped{'data-tooltip' => 'Site web'}
+      %i.mdi-social-public
+      = link_to (get_domain(website_or("N/A"))), website_or("#"), class: :'grey-text', target: :_blank
+    &nbsp;
+    %span.tooltipped{'data-tooltip' => 'Dernière connexion'}
+      %i.mdi-action-history
+      = distance_of_time_in_words user.last_sign_in_at, Time.now
