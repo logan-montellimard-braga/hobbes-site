@@ -10,9 +10,16 @@ fr:
   error_unknown: "Erreur."
   notice_unknown: "Succès."
   devise:
+    sessions:
+      signed_in: "Connecté."
+      signed_out: "Déconnecté."
+      remember_me: 'Se souvenir de moi'
+    signed_up: "Votre inscription a bien été enregistrée."
     registrations:
       user:
         updated: "Mise à jour effectuée avec succès."
+        destroyed: "Votre compte a été supprimé. Nous espérons vous revoir bientôt."
+        signed_up: "Votre inscription a bien été enregistrée."
   login: "Nom d'utilisateur"
   attributes:
     login: "Nom d'utilisateur"
