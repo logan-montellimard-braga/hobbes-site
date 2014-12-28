@@ -21,4 +21,8 @@ module UsersHelper
     return url if url == "N/A"
     URI.parse(url).host
   end
+
+  def identities_number
+    @user.identities.count
+  end
 end

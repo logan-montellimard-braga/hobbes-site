@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :identities
+
   TEMP_EMAIL_PREFIX = 'changez@moi'
   TEMP_EMAIL_REGEX = /\Achangez@moi/
 
