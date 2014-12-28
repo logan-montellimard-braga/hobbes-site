@@ -24,11 +24,15 @@ fr:
         new:
           username: "Nom d'utilisateur"
           email: "Email"
+          location: "Localisation"
+          website: "Site web"
           remember_me: " Se souvenir de moi"
         edit:
           username: "Nom d'utilisateur"
           email: 'Email'
           name: "Nom"
+          location: "Localisation"
+          website: "Site web"
           password: "Nouveau mot de passe"
           password_confirmation: 'Confirmation du nouveau mot de passe'
           current_password: 'Mot de passe actuel'

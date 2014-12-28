@@ -12,16 +12,16 @@
       .col.s4.offset-m1.m2
         = link_to (image_tag avatar_url(@user, 110), class: :'circle responsive-img tooltipped', 'data-tooltip' => 'Modifier sur Gravatar'), "https://fr.gravatar.com/emails/", target: :_blank
       .col.s8.m8.infos
-        %h5= @user.name.blank? ? 'Nom non renseigné' : @user.name
+        %h5= name_or "Nom non renseigné"
         %h6.grey-text= @user.email
         %h6.grey-text.hide-on-small-only
           %span.tooltipped{'data-tooltip' => 'Localisation'}
             %i.mdi-maps-place
-            France
+            = location_or "N/A"
           &nbsp;
           %span.tooltipped{'data-tooltip' => 'Site web'}
             %i.mdi-social-public
-            %a.grey-text{:href => 'http://foo.fr'} foo.fr
+            = link_to (get_domain(website_or("N/A"))), website_or("#"), class: :'grey-text', target: :_blank
           &nbsp;
           %span.tooltipped{'data-tooltip' => 'Dernière connexion'}
             %i.mdi-action-history
@@ -45,6 +45,12 @@
             .row
               .col.s12
                 = f.input :name, required: false
+            .row
+              .col.s12
+                = f.input :location, required: false
+            .row
+              .col.s12
+                = f.input :website, required: false
             .row
               .col.s12
                 = f.input :password, autocomplete: "off"# hint: "laissez blanc pour laisser tel quel", required: false
