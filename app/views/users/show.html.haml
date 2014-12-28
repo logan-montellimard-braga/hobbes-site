@@ -1,2 +1,88 @@
-%h2= @user.name
-%h6= @user.email
+- title = @user.name.blank? ? @user.email : @user.name
+- provide :title, title.split("@")[0]
+- provide :desc, 'profil utilisateur de ' + title
+
+= render 'shared/pages/band'
+
+%section.profil
+  .container
+    .row
+      - if authorized?
+        .col.s12.offset-m3.offset-s4
+          = link_to "Modifier le profil", edit_user_registration_path, class: :'light-green-text'
+      .col.s4.offset-m1.m2
+        = image_tag avatar_url(@user, 110), class: :'circle responsive-img'
+      .col.s8.m8.infos
+        %h5= @user.name.blank? ? 'Nom non renseigné' : @user.name
+        %h6.grey-text= @user.email
+        %h6.grey-text.hide-on-small-only
+          %span.tooltipped{'data-tooltip' => 'Localisation'}
+            %i.mdi-maps-place
+            France
+          &nbsp;
+          %span.tooltipped{'data-tooltip' => 'Site web'}
+            %i.mdi-social-public
+            %a.grey-text{:href => 'http://foo.fr'} foo.fr
+          &nbsp;
+          %span.tooltipped{'data-tooltip' => 'Dernière connexion'}
+            %i.mdi-action-history
+            = distance_of_time_in_words @user.last_sign_in_at, Time.now
+    .row
+      .col.s12.m10.offset-m1.center
+        %ul.tabs.center
+          %li.tab.col.s2
+            %a{href: :'#templates'}
+              templates
+              %span.grey-text.lighten-2 3
+          %li.tab.col.s2
+            %a{href: :'#favoris'}
+              favoris
+              %span.grey-text.lighten-2 12
+          - if authorized?
+            %li.tab.col.s2
+              %a{href: :'#identites'}
+                identit&eacute;s
+                %span.grey-text.lighten-2 4
+    .row
+      #templates.col.s12.m10.offset-m1
+        .row
+          .col.s6.m4
+            = image_tag "http://placehold.it/200x200"
+          .col.s6.m4
+            = image_tag "http://placehold.it/200x200"
+          .col.s6.m4
+            = image_tag "http://placehold.it/200x200"
+      #favoris.col.s12.m10.offset-m1
+        .row
+          .col.s6.m4
+            = image_tag "http://placehold.it/200x200"
+          .col.s6.m4
+            = image_tag "http://placehold.it/200x200"
+          .col.s6.m4
+            = image_tag "http://placehold.it/200x200"
+        .row
+          .col.s6.m4
+            = image_tag "http://placehold.it/200x200"
+          .col.s6.m4
+            = image_tag "http://placehold.it/200x200"
+          .col.s6.m4
+            = image_tag "http://placehold.it/200x200"
+        .row
+          .col.s6.m4
+            = image_tag "http://placehold.it/200x200"
+          .col.s6.m4
+            = image_tag "http://placehold.it/200x200"
+          .col.s6.m4
+            = image_tag "http://placehold.it/200x200"
+      - if authorized?
+        #identites.col.s12.m10.offset-m1
+          .row
+            .col.s6.m4
+              = image_tag "http://placehold.it/200x200"
+            .col.s6.m4
+              = image_tag "http://placehold.it/200x200"
+            .col.s6.m4
+              = image_tag "http://placehold.it/200x200"
+          .row
+            .col.s6.m4
+              = image_tag "http://placehold.it/200x200"
