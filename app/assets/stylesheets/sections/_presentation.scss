@@ -1,5 +1,9 @@
 .arrowed-title:before {
-  content: url('http://placehold.it/20x20');
+  content: url('list.png');
+  margin-right: 5px;
+}
+.arrowed-title-white:before {
+  content: url('list_white.png');
   margin-right: 5px;
 }
 
