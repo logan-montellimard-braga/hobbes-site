@@ -1,0 +1,25 @@
+- klass = 'grey'
+- title = 'Unknown'
+- case identity.provider
+- when 'facebook'
+  - klass = 'blue darken-4'
+  - title = 'Facebook'
+- when 'google_oauth2'
+  - klass = 'red'
+  - title = 'Google'
+- when 'github'
+  - klass = 'grey lighten-1'
+  - title = 'Github'
+- when 'linkedin'
+  - klass = 'blue'
+  - title = 'LinkedIn'
+
+.col.s12.m6.l4
+  .card{:class => klass}
+    .card-content.white-text
+      %span.card-title= title
+      -# %hr
+      %p
+        Cr&eacute;&eacute;e le #{l identity.created_at, :format => :short}
+        -# %br
+        -# %span.grey-text.lighten-3 (#{distance_of_time_in_words identity.created_at, Time.now})

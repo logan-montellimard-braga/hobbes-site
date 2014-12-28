@@ -22,13 +22,31 @@
       line-height: 1.25em;
     }
   }
+  .badge {
+    transition: all 0.3s cubic-bezier(0.5, 0.1, 0.3, 0.1);
+  }
   a {
     &:hover, &.active {
       @extend .darken-2;
+    }
+    &.active .badge {
+      @extend .light-green-text;
     }
   }
 
   hr {
     border-top: 0px solid #efefef;
+  }
+}
+
+.tip {
+  margin: 20px 0 30px 0;
+  padding-left: 10px;
+}
+
+.nothing {
+  border: 4px dashed #dedede;
+  p {
+    padding: 15px 0;
   }
 }

@@ -14,23 +14,26 @@
     .row
       .col.s12.m10.offset-m1.center
         %ul.tabs.center
-          %li.tab.col.s2
+          %li.tab.col
             %a{href: :'#templates'}
               templates
-              %span.grey-text.lighten-2 3
-          %li.tab.col.s2
+              %span.badge 3
+          %li.tab.col
             %a{href: :'#favoris'}
               favoris
-              %span.grey-text.lighten-2 12
+              %span.badge 12
           - if authorized?
-            %li.tab.col.s2
+            %li.tab.col
               %a{href: :'#identites'}
                 identit&eacute;s
-                %span.grey-text.lighten-2= identities_number
+                %span.badge= identities_number
 
     .row
       #templates.col.s12.m10.offset-m1
         .row
+          %p.grey-text.tip
+            %i.mdi-action-help
+            Regroupe les templates que vous avez partag&eacute;s.
           .col.s6.m4
             = image_tag "http://placehold.it/200x200"
           .col.s6.m4
@@ -39,6 +42,9 @@
             = image_tag "http://placehold.it/200x200"
       #favoris.col.s12.m10.offset-m1
         .row
+          %p.grey-text.tip
+            %i.mdi-action-help
+            Regroupe les templates que vous avez mis en favoris.
           .col.s6.m4
             = image_tag "http://placehold.it/200x200"
           .col.s6.m4
@@ -62,12 +68,7 @@
       - if authorized?
         #identites.col.s12.m10.offset-m1
           .row
-            .col.s6.m4
-              = image_tag "http://placehold.it/200x200"
-            .col.s6.m4
-              = image_tag "http://placehold.it/200x200"
-            .col.s6.m4
-              = image_tag "http://placehold.it/200x200"
-          .row
-            .col.s6.m4
-              = image_tag "http://placehold.it/200x200"
+            %p.grey-text.tip
+              %i.mdi-action-help
+              Regroupe les fournisseurs externes par lesquels vous vous &ecirc;tes connect&eacute;.
+            = (render @user.identities) || (render 'nothing_here')

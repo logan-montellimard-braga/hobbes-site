@@ -25,4 +25,12 @@ module ApplicationHelper
     gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
   end
+
+  def haml_tag_if(condition, *args, &block)
+    if condition
+      haml_tag *args, &block
+    else
+      yield
+    end
+  end
 end
