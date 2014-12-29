@@ -1,9 +1,9 @@
 .arrowed-title:before {
-  content: url('list.png');
+  content: image-url('list.png');
   margin-right: 5px;
 }
 .arrowed-title-white:before {
-  content: url('list_white.png');
+  content: image-url('list_white.png');
   margin-right: 5px;
 }
 
@@ -110,7 +110,7 @@
 
 #community {
   @extend .light-green, .darken-4;
-  background-image: url('map.jpg');
+  background-image: image-url('map.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   color: white;

@@ -1,11 +1,11 @@
 .light-green-bg {
   // @extend .light-green;
-  background: url('/assets/background_vert.png') center center fixed;
+  background: image-url('background_vert.png') center center fixed;
   background-size: cover;
 }
 .light-brown-bg {
   // @extend .brown;
-  background: url('/assets/background_marron.png') center center fixed;
+  background: image-url('background_marron.png') center center fixed;
   background-size: cover;
 }
 
