@@ -13,16 +13,18 @@
     .row
       .col.s12
         = f.input :website, required: false
+    %br
     .row
       .col.s12
         = f.input :password, autocomplete: "off"# hint: "laissez blanc pour laisser tel quel", required: false
     .row
       .col.s12
         = f.input :password_confirmation, required: false
-    %br
-    .row
-      .col.s12
-        = f.input :current_password, required: true
+    -# - unless @user.oauthed
+    -#   %br
+    -#   .row
+    -#     .col.s12
+    -#       = f.input :current_password, required: true
   .row.form-actions
     .col.s12
       = link_to "#", class: :'submit btn btn-flat btn-large white-text brown col s12 btn-background-brown waves-effect waves-light', 'data-id' => 'edit_user' do
