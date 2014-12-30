@@ -56,6 +56,9 @@ nav img.brand-logo {
   nav {
     z-index: 999;
   }
+  .dropdown-content {
+    z-index: 1000;
+  }
   // nav {
   //   position: absolute;
   // }
@@ -71,6 +74,7 @@ nav img.brand-logo {
 .dropdown-content {
   box-shadow: none;
   border: 1px solid #eeeeee;
+  z-index: 10000;
 }
 
 .dropdown-content li {
