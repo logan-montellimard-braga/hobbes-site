@@ -2,6 +2,14 @@
 #= require jquery_ujs
 #= require_directory .
 
+IS_ON_MOBILE = false
+
+setOnMobile = () ->
+  if $("nav").css("z-index") < 9999
+    IS_ON_MOBILE = true
+  else
+    IS_ON_MOBILE = false
+
 sizeMainImage = () ->
   $("#main #code_image img").css("left", $(window).width() / 2 - $("#main #code_image img").width() / 2)
 
@@ -14,6 +22,7 @@ positionHeaderLogo = () ->
 $(document).ready ->
   sizeMainImage()
   positionHeaderLogo()
+  setOnMobile()
   $(".dropdown-button").dropdown hover: false
   $(".button-collapse").sideNav()
   $('.tooltipped').tooltip delay: 100
@@ -23,17 +32,11 @@ $(document).ready ->
   $("a.submit").show()
   $('a.submit').click (e) ->
     e.preventDefault()
-    console.log($("form#" + $(@).data("id")))
     $("form#" + $(@).data("id")).submit()
-
-  # $("#preloader").fadeOut 'slow'
 
   if $('form .error_notification').length > 0
     $('form span.error').prev('.input-field').children('input').addClass 'input-error'
     $('html, body').animate scrollTop: $('form .error_notification').offset().top - 100, 600
-
-  $("#main_drop a").click ->
-    @.click()
 
   $(".toast").click ->
     $(@).fadeOut 'slow'
@@ -47,3 +50,30 @@ $(document).ready ->
   $(window).resize ->
     sizeMainImage()
     positionHeaderLogo()
+    setOnMobile()
+
+  didScroll = false
+  lastScrollTop = 0
+  delta = 10
+  navbarHeight = $("nav").outerHeight()
+
+  $(window).scroll (e) ->
+    didScroll = true
+
+  hasScrolled = () ->
+    st = $(this).scrollTop()
+    return if Math.abs(lastScrollTop - st) <= delta
+    if st > lastScrollTop and st > navbarHeight
+      $("nav").removeClass("nav-down").addClass "nav-up"
+    else
+      $("nav").removeClass("nav-up").addClass "nav-down"
+
+    lastScrollTop = st
+
+  setInterval () ->
+    if IS_ON_MOBILE && didScroll
+      hasScrolled()
+      didScroll = false
+    else if !IS_ON_MOBILE
+      $("nav").removeClass("nav-up").addClass "nav-down"
+  , 500
