@@ -1,5 +1,8 @@
 .col.s4.offset-m1.m2
-  = image_tag avatar_url(user, 110), class: :'circle responsive-img'
+  - if authorized?
+    = link_to image_tag(avatar_url(user, 110), class: :'circle responsive-img tooltipped', 'data-tooltip' => 'Modifier via Gravatar'), "https://fr.gravatar.com/emails/", target: :_blank
+  - else
+    =  image_tag avatar_url(user, 110), class: :'circle responsive-img'
 .col.s8.m8.infos
   %h5= name_or "Nom non renseigné"
   %h6.grey-text= user.email
