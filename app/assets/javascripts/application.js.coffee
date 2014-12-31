@@ -4,6 +4,9 @@
 #= require_directory .
 
 IS_ON_MOBILE = false
+didScroll = false
+lastScrollTop = 0
+delta = 10
 
 setOnMobile = () ->
   if $("nav").css("z-index") < 9999
@@ -20,27 +23,47 @@ positionHeaderLogo = () ->
   style = "<style data-id='menu' type='text/css'>@media (max-width: 992px) { nav .brand-logo { left: " + pos + " } }</style>"
   $("body").append style
 
-$(document).ready ->
-  sizeMainImage()
-  positionHeaderLogo()
-  setOnMobile()
-  $(".dropdown-button").dropdown hover: false
-  $(".button-collapse").sideNav()
-  $('.tooltipped').tooltip delay: 100
-  $('ul.tabs').tabs()
-
+setSubmitButtons = () ->
   $("button.submit").remove()
   $("a.submit").show()
   $('a.submit').click (e) ->
     e.preventDefault()
     $("form#" + $(@).data("id")).submit()
 
+goToNextErrorInForm = () ->
   if $('form .error_notification').length > 0
     $('form span.error').prev('.input-field').children('input').addClass 'input-error'
     $('html, body').animate scrollTop: $('form .error_notification').offset().top - 100, 600
 
-  $(".toast").click ->
-    $(@).fadeOut 'slow'
+makeToastsDismissible = () ->
+  unless IS_ON_MOBILE
+    $(".toast").click ->
+      $(@).fadeOut 'slow'
+
+
+hasScrolled = (navHeight) ->
+  st = $(this).scrollTop()
+  return if Math.abs(lastScrollTop - st) <= delta
+  if st > lastScrollTop and st > navHeight
+    $("nav").removeClass("nav-down").addClass "nav-up"
+  else
+    $("nav").removeClass("nav-up").addClass "nav-down"
+
+  lastScrollTop = st
+
+$(document).ready ->
+  sizeMainImage()
+  positionHeaderLogo()
+  setOnMobile()
+  setSubmitButtons()
+  goToNextErrorInForm()
+  makeToastsDismissible()
+  navbarHeight = $("nav").outerHeight()
+
+  $(".dropdown-button").dropdown hover: false
+  $(".button-collapse").sideNav()
+  $('.tooltipped').tooltip delay: 100
+  $('ul.tabs').tabs()
 
   $("#main #code_image img").load ->
     sizeMainImage()
@@ -53,27 +76,13 @@ $(document).ready ->
     positionHeaderLogo()
     setOnMobile()
 
-  didScroll = false
-  lastScrollTop = 0
-  delta = 10
-  navbarHeight = $("nav").outerHeight()
-
+  # Navbar auto hiding
   $(window).scroll (e) ->
     didScroll = true
 
-  hasScrolled = () ->
-    st = $(this).scrollTop()
-    return if Math.abs(lastScrollTop - st) <= delta
-    if st > lastScrollTop and st > navbarHeight
-      $("nav").removeClass("nav-down").addClass "nav-up"
-    else
-      $("nav").removeClass("nav-up").addClass "nav-down"
-
-    lastScrollTop = st
-
   setInterval () ->
     if IS_ON_MOBILE && didScroll
-      hasScrolled()
+      hasScrolled(navbarHeight)
       didScroll = false
     else if !IS_ON_MOBILE
       $("nav").removeClass("nav-up").addClass "nav-down"
