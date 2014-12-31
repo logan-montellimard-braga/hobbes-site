@@ -114,7 +114,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  // background-position: center -150px;
+  background-position: center -150px;
+}
+
+@media (max-width: 1100px) {
+  #community {
+    background-position: center center;
+  }
 }
 
 #quickstart {
