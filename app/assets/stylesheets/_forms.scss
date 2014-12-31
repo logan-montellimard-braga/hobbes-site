@@ -44,7 +44,7 @@ form {
     @extend .red, .white-text;
   }
 
-  .error {
+  .error, span.input-error {
     font-weight: bold;
     font-size: 0.85em;
     display: block;
@@ -53,11 +53,17 @@ form {
     margin-top: -5px;
   }
 
-  .form-inputs {
-    padding: 0 10px;
+  input.error {
+    font-weight: normal;
+    font-size: 1em;
+    margin-top: 0;
   }
 
-  .input-error {
+  .form-inputs {
+    padding: 0 12px;
+  }
+
+  input.input-error {
     border-bottom: 1px solid #F44336 !important;
     box-shadow: 0 1px 0 0 #F44336 !important;
   }
