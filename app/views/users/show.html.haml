@@ -32,39 +32,23 @@
       #templates.col.s12.m10.offset-m1
         .row
           %p.grey-text.tip
-            %i.mdi-action-help
-            Regroupe les templates que vous avez partag&eacute;s.
-          .col.s6.m4
-            = image_tag "http://placehold.it/200x200"
-          .col.s6.m4
-            = image_tag "http://placehold.it/200x200"
-          .col.s6.m4
-            = image_tag "http://placehold.it/200x200"
+            %i.mdi-action-help<
+              Regroupe les templates
+            - if authorized?
+              que vous avez partag&eacute;s.
+            - else
+              partag&eacute;s par #{title}.
+          = render 'nothing_here'
       #favoris.col.s12.m10.offset-m1
         .row
           %p.grey-text.tip
-            %i.mdi-action-help
-            Regroupe les templates que vous avez mis en favoris.
-          .col.s6.m4
-            = image_tag "http://placehold.it/200x200"
-          .col.s6.m4
-            = image_tag "http://placehold.it/200x200"
-          .col.s6.m4
-            = image_tag "http://placehold.it/200x200"
-        .row
-          .col.s6.m4
-            = image_tag "http://placehold.it/200x200"
-          .col.s6.m4
-            = image_tag "http://placehold.it/200x200"
-          .col.s6.m4
-            = image_tag "http://placehold.it/200x200"
-        .row
-          .col.s6.m4
-            = image_tag "http://placehold.it/200x200"
-          .col.s6.m4
-            = image_tag "http://placehold.it/200x200"
-          .col.s6.m4
-            = image_tag "http://placehold.it/200x200"
+            %i.mdi-action-help<
+            Regroupe les templates
+            - if authorized?
+              que vous avez mis en favoris.
+            - else
+              mis en favoris par #{title}
+          = render 'nothing_here'
       - if authorized?
         #identites.col.s12.m10.offset-m1
           .row
