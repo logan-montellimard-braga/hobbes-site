@@ -21,6 +21,8 @@ module Hobbes
     config.i18n.locale = :fr
     config.i18n.default_locale = :fr
 
+    config.exceptions_app = self.routes
+
     config.assets.precompile += %w[admin/active_admin.css admin/active_admin.js]
   end
 end
