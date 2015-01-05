@@ -11,12 +11,14 @@
   padding-top: 90px;
   min-height: 550px;
   height: 90vh;
+  max-height: 600px;
   box-sizing: border-box;
 
   #code_image {
     width: 100%;
     min-height: 550px;
     height: 90vh;
+    max-height: 600px;
     position: absolute;
     top: 0;
     left: 0;
@@ -26,7 +28,8 @@
       display: block;
       margin: auto;
       position: absolute;
-      bottom: -8vh;
+      top: 300px;
+      // bottom: -8vh;
     }
   }
 }
