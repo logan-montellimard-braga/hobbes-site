@@ -71,11 +71,20 @@ html.turbolinks-progress-bar::before {
 }
 
 .btn-border {
+  @extend .text-white;
   border: 1px solid white;
+  transition-duration: 0.3s;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.15);
+    @extend .white;
     box-shadow: none;
+
+    &.green-hover {
+      @extend .light-green-text;
+    }
+    &.brown-hover {
+      @extend .brown-text, .lighten-2;
+    }
   }
 }
 
