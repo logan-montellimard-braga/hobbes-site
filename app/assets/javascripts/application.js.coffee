@@ -76,6 +76,9 @@ $(document).ready ->
     positionHeaderLogo()
     setOnMobile()
 
+  $("form").on 'keyup', (e) ->
+    $(this).submit() if e.which is 13
+
   # Navbar auto hiding
   $(window).scroll (e) ->
     didScroll = true
