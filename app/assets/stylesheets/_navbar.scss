@@ -100,3 +100,9 @@ nav img.brand-logo {
 .nav-up {
   top: -81px;
 }
+
+@media (max-width: 992px) {
+  .side-nav li a {
+    width: 90%;
+  }
+}
