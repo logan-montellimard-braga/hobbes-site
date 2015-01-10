@@ -8,16 +8,16 @@
       .col.m3.hide-on-med-and-down.image
         = image_tag "logo_blanc.png", class: :'responsive-img'
       .col.l3.m4.s12.grey-text
-        %h5 Liens importants
+        %h5 Hobbes
         %ul
           %li
-            %a.grey-text{:href => "#!"} Renseignements
+            %a.grey-text{:href => page_path('infos')} Informations
           %li
-            %a.grey-text{:href => "#!"} T&eacute;l&eacute;chargements
+            %a.grey-text{:href => page_path('download')} T&eacute;l&eacute;chargements
           %li
-            %a.grey-text{:href => "#!"} Documentation
+            %a.grey-text{:href => page_path('guides')} Documentation
           %li
-            %a.grey-text{:href => "#!"} Communaut&eacute;
+            %a.grey-text{:href => page_path('community')} Communaut&eacute;
       .col.l3.m4.s12
         %h5 Le projet
         %ul
@@ -26,16 +26,16 @@
           %li
             %a.grey-text{:href => "#!"} Code source (site web)
           %li
-            %a.grey-text{:href => "#!"} Contribuer
+            %a.grey-text{:href => page_path('contribute')} Contribuer
       .col.l3.m4.s12
         %h5 Addendum
         %ul
           %li
-            %a.grey-text{:href => "#!"} À Propos
+            %a.grey-text{:href => page_path('about')} À Propos
           %li
-            %a.grey-text{:href => "#!"} Contact
+            %a.grey-text{:href => page_path('contact')} Contact
           %li
-            %a.grey-text{:href => "#!"} Licence
+            %a.grey-text{:href => "http://www.gnu.org/copyleft/gpl.html", target: :_blank} Licence
   .footer-copyright.darken-4
     .container.grey-text
       = link_to "Hobbes", root_path, class: :name
