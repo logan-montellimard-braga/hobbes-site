@@ -1,0 +1,17 @@
+- provide :title, "L'équipe"
+- provide :desc, "à propos de nous"
+
+= render 'shared/pages/band'
+
+%section
+  .container
+    .row.center
+      .col.m4.s12
+        = image_tag 'http://placehold.it/200x200', :class => 'responsive-img circle'
+        %h4.grey-text.darken-1.lowercase.small-caps Marie Nuel
+      .col.m4.s12
+        = image_tag 'http://placehold.it/200x200', :class => 'responsive-img circle'
+        %h4.grey-text.darken-1.lowercase.small-caps Logan Braga
+      .col.m4.s12
+        = image_tag 'http://placehold.it/200x200', :class => 'responsive-img circle'
+        %h4.grey-text.darken-1.lowercase.small-caps Maxime Guillermet
