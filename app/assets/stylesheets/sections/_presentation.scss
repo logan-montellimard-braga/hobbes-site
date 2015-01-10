@@ -167,3 +167,11 @@
 .band {
   margin: 30px 0;
 }
+
+@media (max-width: 992px) {
+  .band {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}
