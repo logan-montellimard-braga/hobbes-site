@@ -3,15 +3,32 @@
 
 = render 'shared/pages/band'
 
-%section
+%section.profil
   .container
+    .row
+      .col.s12.m10.offset-m1
+        %p
+          Hobbes a d&eacute;but&eacute; en tant que projet tuteur&eacute; d'un groupe d'&eacute;tudiants en seconde ann&eacute;e
+          du DUT M&eacute;tiers du Multim&eacute;dia et de l'Internet au Puy-en-Velay. Le but &eacute;tait de fournir une solution simple et flexible
+          au probl&egrave;me de la prise de cours sur ordinateur qui nous concernait tous.
+        %p
+          Aujourd'hui, le projet continue toujours d'avancer, maintenu par Logan Braga.
+        %br
+        %hr
+        %br
     .row.center
-      .col.m4.s12
+      .col.m4.s12.photo-bloc
         = image_tag 'http://placehold.it/200x200', :class => 'responsive-img circle'
-        %h4.grey-text.darken-1.lowercase.small-caps Marie Nuel
-      .col.m4.s12
+        %h4.light-green-text.darken-1.lowercase.small-caps Marie Nuel
+        %p
+          Communication, pr&eacute;sence sur les r&eacute;seaux sociaux
+      .col.m4.s12.photo-bloc
         = image_tag 'http://placehold.it/200x200', :class => 'responsive-img circle'
-        %h4.grey-text.darken-1.lowercase.small-caps Logan Braga
-      .col.m4.s12
+        %h4.light-green-text.darken-1.lowercase.small-caps Logan Braga
+        %p
+          D&eacute;veloppement logiciel et site, maintenance
+      .col.m4.s12.photo-bloc
         = image_tag 'http://placehold.it/200x200', :class => 'responsive-img circle'
-        %h4.grey-text.darken-1.lowercase.small-caps Maxime Guillermet
+        %h4.light-green-text.darken-1.lowercase.small-caps Maxime Guillermet
+        %p
+          Design graphique, tutoriels et guides texte et vid&eacute;o
