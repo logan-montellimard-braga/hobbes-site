@@ -77,7 +77,7 @@ $(document).ready ->
     setOnMobile()
 
   $("form").on 'keyup', (e) ->
-    $(this).submit() if e.which is 13
+    $(this).submit() if e.which is 13 and !e.shiftKey
 
   # Navbar auto hiding
   $(window).scroll (e) ->
