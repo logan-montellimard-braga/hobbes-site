@@ -18,6 +18,11 @@
             %a.grey-text{:href => page_path('guides')} Documentation
           %li
             %a.grey-text{:href => page_path('community')} Communaut&eacute;
+          - unless user_signed_in?
+            %li
+              %a.grey-text{:href => new_user_session_path} Connexion
+            %li
+              %a.grey-text{:href => new_user_registration_path} Inscription
       .col.l3.m4.s12
         %h5 Le projet
         %ul
