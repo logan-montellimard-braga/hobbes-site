@@ -5,9 +5,9 @@
   -#       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
   .container
     .row.grey-text.links
-      .col.m3.hide-on-med-and-down.image
+      .col.m3.hide-on-small-only.image
         = image_tag "logo_blanc.png", class: :'responsive-img'
-      .col.l3.m4.s12.grey-text
+      .col.l3.m3.s12.grey-text
         %h5 Hobbes
         %ul
           %li
@@ -23,16 +23,16 @@
               %a.grey-text{:href => new_user_session_path} Connexion
             %li
               %a.grey-text{:href => new_user_registration_path} Inscription
-      .col.l3.m4.s12
+      .col.l3.m3.s12
         %h5 Le projet
         %ul
           %li
             %a.grey-text{:href => "#!"} Code source
           %li
-            %a.grey-text{:href => "#!"} Code source (site web)
+            %a.grey-text{:href => "#!"} Code source (site)
           %li
             %a.grey-text{:href => page_path('contribute')} Contribuer
-      .col.l3.m4.s12
+      .col.l3.m3.s12
         %h5 Addenda
         %ul
           %li
@@ -44,7 +44,7 @@
   .footer-copyright.darken-4
     .container.grey-text
       = link_to "Hobbes", root_path, class: :name
-      %span.grey-text.darken-1.right.copy &copy; 2015 &middot; Tous droits r&eacute;serv&eacute;s
+      %span.grey-text.darken-1.right.copy.hide-on-med-and-down &copy; 2015 &middot; Tous droits r&eacute;serv&eacute;s
       %ul.authors
         %li
           = link_to "Logan Braga", "http://loganbraga.fr", target: :_blank
@@ -52,3 +52,4 @@
           = link_to "Maxime Guillermet", "http://maxime-guillermet.com/", target: :_blank
         %li
           = link_to "Marie Nuel", "http://marienuel.com", target: :_blank
+      %span.grey-text.darken-1.copy.hide-on-large-only &copy; 2015 &middot; Tous droits r&eacute;serv&eacute;s
