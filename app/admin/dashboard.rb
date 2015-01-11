@@ -26,7 +26,7 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Messages" do
           ul do
             ContactMessage.last(5).reverse.map do |m|
-              li link_to(m.author.upcase + " : " + m.text.capitalize.truncate(100) + " ( " + m.created_at.to_s + " )", admin_contact_message_path(m))
+              li link_to(m.author.upcase + " : " + m.title.truncate(50) + " ( " + m.created_at.to_s + " )", admin_contact_message_path(m))
             end
           end
         end
