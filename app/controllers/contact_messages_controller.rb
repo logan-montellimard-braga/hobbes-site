@@ -6,11 +6,7 @@ class ContactMessagesController < ApplicationController
   def create
     @contact_message = ContactMessage.new(contact_message_params)
     if user_signed_in?
-      if @contact_message.author != current_user.email
-        flash[:alert] = "Falsification des données pré-remplies du formulaire."
-        redirect_to root_path
-        return
-      end
+      @contact_message.author = current_user.email
     end
 
     respond_to do |format|

@@ -10,8 +10,14 @@
         %p
           Chez Hobbes, il nous tient &agrave; cœur de rester au plus pr&egrave;s de nos utilisateurs. Une remarque, une id&eacute;e, une suggestion ?
           Un petit probl&egrave;me ? N'h&eacute;sitez pas &agrave; nous le faire savoir.
-        %p
-          Indiquer votre adresse email dans le champ "Auteur" n'est pas obligatoire, mais notez que nous ne sommes pas en mesure de vous r&eacute;pondre sans.
+        - if user_signed_in?
+          %p<
+            Vous &ecirc;tes authentifi&eacute; en tant que
+            %b #{current_user.email}.
+            Votre identit&eacute; sera automatiquement associ&eacute;e aux messages que vous nous envoyez.
+        - else
+          %p
+            Indiquer votre adresse email dans le champ "Auteur" n'est pas obligatoire, mais notez que nous ne sommes pas en mesure de vous r&eacute;pondre sans.
         %br
       .row
         .col.s12.m10.offset-m1
@@ -24,9 +30,7 @@
           .form-inputs
             .row
               .col.s12
-                - if user_signed_in?
-                  = f.input :author, required: false, readonly: true, autofocus: false, input_html: {value: current_user.email}
-                - else
+                - unless user_signed_in?
                   = f.input :author, required: false, autofocus: false
             .row
               .col.s12
