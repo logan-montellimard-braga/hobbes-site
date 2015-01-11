@@ -12,9 +12,7 @@
   .nav-wrapper
     .row
       .col.s12.l8.offset-l2
-        -# = link_to "Hobbes", root_path, class: :'brand-logo hide-on-large-only'
         = logo_link_to_root "brand-logo "
-        -# %span.title.hide-on-med-and-down Hobbes
         %ul#nav-mobile.right.side-nav
           %li
             = nav_link "hobbes", root_path
@@ -25,6 +23,9 @@
           %li
             %a{href: :'#!', :class => "dropdown-button", :'data-activates' => "main_drop"}
               espace membre
-              %i.mdi-navigation-arrow-drop-down.right.light-green-text>
+              - if user_signed_in?
+                %i.mdi-action-verified-user.right.signedin>
+              - else
+                %i.mdi-navigation-arrow-drop-down.right.signedoff>
         %a{href: :'#', class: :'button-collapse', :'data-activates' => 'nav-mobile'}
           %i.mdi-navigation-menu

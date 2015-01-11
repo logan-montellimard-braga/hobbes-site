@@ -106,3 +106,13 @@ nav img.brand-logo {
     width: 90%;
   }
 }
+
+nav .nav-wrapper .side-nav li a {
+  .signedoff {
+    @extend .light-green-text;
+  }
+  .signedin {
+    @extend .light-green-text;
+    font-size: 1.3em;
+  }
+}
