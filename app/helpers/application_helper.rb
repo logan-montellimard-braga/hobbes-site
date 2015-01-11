@@ -21,6 +21,17 @@ module ApplicationHelper
     end
   end
 
+  def nav_auth_icon
+    if user_signed_in?
+      t = current_user.name.blank? ? current_user.email : current_user.name
+      code = "%i.mdi-action-verified-user.right.signedin.tooltipped{'data-tooltip' => 'Authentifié en tant que #{t}'}>"
+    else
+      code = "%i.mdi-navigation-arrow-drop-down.right.signedoff>"
+    end
+    engine = Haml::Engine.new(code)
+    engine.render
+  end
+
   def avatar_url(user, size)
     gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
