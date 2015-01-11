@@ -6,8 +6,38 @@
 %section
   .container
     .row
-      %p
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-        vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-        no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      .col.s12.m10.offset-m1.download
+        .col.s12.text-left.m4.hide-on-small-only
+          %i.mdi-action-view-carousel
+        .col.s12.m8.text-right
+          %h5 Hobbes avec interface graphique
+          %p
+            Contient le logiciel en ligne de commande et avec interface graphique.
+            %br
+            Si vous ne savez pas quelle option prendre, c'est celle-ci !
+          %br
+          %a.tooltipped.waves-effect.waves-light.btn.btn-flat.btn-large.white-text.light-green.darken-1.btn-background-green{'data-tooltip' => 'Version 0.1.0'}
+            T&eacute;l&eacute;charger
+    .row
+      .col.s12.m10.offset-m1.download
+        .col.s12.m8
+          %h5 Hobbes en ligne de commande
+          %p
+            Contient le logiciel en ligne de commande uniquement.
+            %br
+            Pour les utilisateurs avanc&eacute;s.
+          %br
+          %a.tooltipped.waves-effect.waves-light.btn.btn-flat.btn-large.white-text.light-green.darken-1.btn-background-green{'data-tooltip' => 'Version 0.1.0'}
+            T&eacute;l&eacute;charger
+        .col.s12.text-right.m4.hide-on-small-only
+          %i.mdi-device-developer-mode
+    .row
+      .col.s12.m10.offset-m1
+        %hr
+
+    .row
+      .col.s12.m10.offset-m1.center
+        %p.grey-text.darken-1
+          Besoin d'aide pour faire vos premiers pas avec Hobbes ?
+        = link_to 'Démarrage rapide', page_path('guides'), :class => 'waves-effect waves-light btn btn-flat btn-large white-text btn-background-brown'
+

@@ -26,6 +26,10 @@ html.turbolinks-progress-bar::before {
   height: 2px !important;
 }
 
+hr {
+  border-top: 0px solid #efefef;
+}
+
 #preloader {
   width: 100vw;
   height: 100vh;
@@ -126,5 +130,25 @@ a.submit {
 
   h4 {
     font-weight: bold;
+  }
+}
+
+.download {
+  margin-bottom: 40px;
+  -ms-display: flex;
+  -moz-display: flex;
+  -webkit-display: flex;
+  display: flex;
+  -ms-align-items: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  align-items: center;
+  h1, h2, h3, h4, h5, h6, a, p {
+    color: #666;
+  }
+
+  i {
+    @extend .brown-text;
+    font-size: 10em;
   }
 }
