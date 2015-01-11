@@ -17,6 +17,8 @@ fr:
         username: "Nom d'utilisateur"
         content: "Contenu"
         title: "Sujet"
+        author: "Auteur (email)"
+        text: "Texte"
         password: 'Mot de passe'
         password_confirmation: 'Confirmation'
         remember_me: " Se souvenir de moi"

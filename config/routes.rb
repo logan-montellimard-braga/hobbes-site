@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :users
+  get 'contact' => 'contact_messages#new'
+  resources :contact_messages, only: [:new, :create]
 
   HighVoltage.configure do |config|
     config.home_page = 'home'

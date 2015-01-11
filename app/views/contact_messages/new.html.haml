@@ -1,0 +1,44 @@
+- provide :title, "Contact"
+- provide :desc, "nous contacter"
+
+= render 'shared/pages/band'
+
+%section.profil
+  .container
+    .row
+      .col.s12.m10.offset-m1
+        %p
+          Chez Hobbes, il nous tient &agrave; cœur de rester au plus pr&egrave;s de nos utilisateurs. Une remarque, une id&eacute;e, une suggestion ?
+          Un petit probl&egrave;me ? N'h&eacute;sitez pas &agrave; nous le faire savoir.
+        %p
+          Indiquer votre adresse email dans le champ "Auteur" n'est pas obligatoire, mais notez que nous ne sommes pas en mesure de vous r&eacute;pondre sans.
+        %br
+      .row
+        .col.s12.m10.offset-m1
+          %hr
+    .row
+      .col.l6.m10.s12.offset-m1.offset-l1
+        %h5 &nbsp;Nous envoyer un message
+        = simple_form_for @contact_message, html: { class: "new_contact_message"} do |f|
+          %br
+          .form-inputs
+            .row
+              .col.s12
+                - if user_signed_in?
+                  = f.input :author, required: false, readonly: true, autofocus: false, input_html: {value: current_user.email}
+                - else
+                  = f.input :author, required: false, autofocus: false
+            .row
+              .col.s12
+                = f.input :title, required: false
+            .row
+              .col.s12
+                = f.input :text, as: :text, required: false, input_html: { class: "materialize-textarea" }
+          .form-actions
+            .col.s12
+              = link_to "#", class: :'submit btn btn-flat btn-large white-text brown col s12 btn-background-brown waves-effect waves-light', 'data-id' => 'new_contact_message' do
+                Envoyer
+                %i.mdi-content-send
+              = button_tag(type: 'submit', class: "submit btn btn-flat btn-large white-text brown col s12 btn-background-brown") do
+                Envoyer
+                %i.mdi-content-send

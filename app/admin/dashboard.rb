@@ -14,7 +14,7 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Derniers membres" do
           ul do
-            User.last(5).map do |user|
+            User.last(5).reverse.map do |user|
               t = user.name || user.email
               li link_to(t, admin_user_path(user))
             end
@@ -23,8 +23,12 @@ ActiveAdmin.register_page "Dashboard" do
       end
 
       column do
-        panel "Info" do
-          para "Welcome to ActiveAdmin."
+        panel "Messages" do
+          ul do
+            ContactMessage.last(5).reverse.map do |m|
+              li link_to(m.author.upcase + " : " + m.text.capitalize.truncate(100) + " ( " + m.created_at.to_s + " )", admin_contact_message_path(m))
+            end
+          end
         end
       end
     end

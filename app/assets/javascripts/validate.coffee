@@ -25,6 +25,18 @@ validator = $('form').validate (
       maxlength: 255
     "user[website]":
       url: true
+    "contact_message[author]":
+      required: true
+      maxlength: 255
+      minlength: 2
+    "contact_message[title]":
+      required: true
+      minlength: 3
+      maxlength: 50
+    "contact_message[text]":
+      required: true
+      minlength: 10
+      maxlength: 1000
 
   messages:
     "user[email]":
@@ -48,4 +60,16 @@ validator = $('form').validate (
       maxlength: $.validator.format "Veuillez saisir moins de {0} caractères"
     "user[website]":
       url: "Veuillez saisir une adresse web valide"
+    "contact_message[author]":
+      required: "Veuillez saisir un nom ou une adresse email"
+      minlength: $.validator.format "Veuillez saisir au moins {0} caractères"
+      maxlength: $.validator.format "Veuillez saisir moins de {0} caractères"
+    "contact_message[title]":
+      required: "Veuillez saisir un sujet"
+      minlength: $.validator.format "Veuillez saisir au moins {0} caractères"
+      maxlength: $.validator.format "Veuillez saisir moins de {0} caractères"
+    "contact_message[text]":
+      required: "Veuillez saisir votre message"
+      minlength: $.validator.format "Veuillez saisir au moins {0} caractères"
+      maxlength: $.validator.format "Veuillez saisir moins de {0} caractères"
   )
