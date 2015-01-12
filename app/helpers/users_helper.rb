@@ -25,4 +25,12 @@ module UsersHelper
   def identities_number
     @user.identities.count
   end
+
+  def templates_number
+    0
+  end
+
+  def favs_number
+    0
+  end
 end
