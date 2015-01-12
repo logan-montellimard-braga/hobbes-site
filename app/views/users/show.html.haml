@@ -17,16 +17,22 @@
           %li.tab.col
             %a.active{href: :'#templates'}
               templates
-              %span.badge 0
+              %span.text-right.badge2
+                &nbsp;
+                = templates_number
           %li.tab.col
             %a{href: :'#favoris'}
               favoris
-              %span.badge 0
+              %span.text-right.badge2
+                &nbsp;
+                = favs_number
           - if authorized?
             %li.tab.col
               %a{href: :'#identites'}
                 identit&eacute;s
-                %span.badge= identities_number
+                %span.text-right.badge2
+                  &nbsp;
+                  = identities_number
 
     .row
       #templates.col.s12.m10.offset-m1
