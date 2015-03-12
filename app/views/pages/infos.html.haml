@@ -3,11 +3,98 @@
 
 = render 'shared/pages/band'
 
-%section
+%section.profil
   .container
     .row
-      %p
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-        vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-        no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      .col.s12.m10.offset-m1
+        %p
+          Hobbes est un ensemble d'outils intuitifs, cr&eacute;&eacute;s pour faciliter
+          la prise de notes scolaires ou conf&eacute;renci&egrave;res, ainsi que la relecture
+          (r&eacute;visions, apprentissage, pr&eacute;sentation) de ces m&ecirc;mes notes.
+        %p
+          En quelques mots, Hobbes c'est
+          %b un langage de fichiers texte
+          sp&eacute;cialement con&ccedil;u pour la prise de notes, et
+          %b un compilateur (logiciel)
+          pour transformer ces fichiers de notes en
+          %b un site web
+          local, autonome et ind&eacute;pendant.
+        %br
+        = link_to 'Téléchargements', page_path('download'), :class => 'center waves-effect waves-light btn btn-flat btn-large white-text light-green darken-1 btn-background-green'
+        &nbsp;
+        = link_to 'Démarrage rapide', page_path('guides'), :class => 'waves-effect waves-light btn btn-flat btn-large white-text btn-background-brown'
+      .row
+        .col.s12.m10.offset-m1
+          %hr
+
+    .row
+      .col.m10.s12.offset-m1
+        %h5 Principes
+        %p
+          Hobbes a &eacute;t&eacute; con&ccedil;u pour r&eacute;pondre &agrave; un ensemble de
+          besoins concrets li&eacute;s &agrave; la probl&eacute;matique de la prise de notes.
+          Pour y parvenir, il respecte ces 4 principes fondamentaux :
+          %ol
+            %li
+              %b Intuitivit&eacute;
+              \: les solutions apport&eacute;es doivent &ecirc;tre simples et accessibles, pour
+              permettre de se focaliser sur le sujet trait&eacute;, pas sur l'outil.
+            %br
+            %li
+              %b Minimalisme
+              \: le langage propos&eacute; doit &ecirc;tre un simple format texte, pour que
+              tout le monde puisse l'&eacute;crire ind&eacute;pendamment d'un logiciel particulier de traitement
+              de texte ou d'un &eacute;diteur de code.
+            %br
+            %li
+              %b Souplesse
+              \: chaque d&eacute;tail doit &ecirc;tre configurable et personnalisable, pour
+              permettre &agrave; tout le monde d'y trouver son compte.
+            %br
+            %li
+              %b Universalit&eacute;
+              \: les solutions propos&eacute;es doivent &ecirc;tre multi-plateformes, encourager
+              le partage et la diffusion, et pouvoir &ecirc;tre int&eacute;gralement sauvegard&eacute;es.
+        %br
+      .row
+        .col.s12.m10.offset-m1
+
+
+    .row
+      .col.m10.s12.offset-m1.text-right
+        %h5 Pourquoi choisir Hobbes
+        %p
+          Le probl&egrave;me de la prise de notes pour ses cours semble &ecirc;tre
+          r&eacute;solu depuis des ann&eacute;es. Et pourtant, les solutions actuelles pr&eacute;sentent toujours
+          quelques petits accrocs qui nous font grincer des dents. Si vous &ecirc;tes dans cet &eacute;tat d'esprit, Hobbes
+          peut certainement vous apporter quelque chose. Nous n'avons pas la solution miracle, mais ces quelques points vous
+          s&eacute;duiront peut-&ecirc;tre :
+        %br
+          %ol.text-left
+            %li
+              %b 1.
+              Le langage Hobbes est fait pour la&nbsp;
+              %b> prise de notes de cours
+              , d&egrave;s le d&eacute;part.
+              %br
+              En se focalisant sur une chose
+              et une seule, nous pensons &ecirc;tre en mesure de l'apprivoiser correctement.
+            %br
+            %li
+              %b 2.
+              Hobbes vise &agrave; vous rendre&nbsp;
+              %b> productif
+              \.
+              %br
+              Oubliez l'outil et consacrez-vous au sujet trait&eacute;, sans distraction.
+            %br
+            %li
+              %b 3.
+              Hobbes vous permet de s&eacute;parer le&nbsp;
+              %b> fond de la forme
+              \.
+              %br
+              Traitez votre sujet de fa&ccedil;on litt&eacute;raire, et automatisez sa mise en forme, avant ou apr&egrave;s.
+        %br
+      .row
+        .col.s12.m10.offset-m1
