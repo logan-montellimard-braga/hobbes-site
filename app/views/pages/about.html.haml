@@ -16,18 +16,24 @@
         %br
     .row.center
       .col.s12.m10.offset-m1
-        .col.l4.s12.photo-bloc
-          = image_tag 'marie_nuel.jpg', :class => 'responsive-img circle'
-          %h5.light-green-text.darken-1.lowercase.small-caps Marie Nuel
-          %p
+        .col.l4.s12.photo-bloc{:itemscope => true, :itemtype => "http://schema.org/Person"}
+          = image_tag 'marie_nuel.jpg', :class => 'responsive-img circle', :itemprop => :image
+          %h5.light-green-text.darken-1.lowercase.small-caps{:itemprop => "name"}
+            %span{:itemprop => "givenName"}Marie
+            %span{:itemprop => "familyName"}Nuel
+          %p{:itemprop => 'description'}
             Communication, pr&eacute;sence sur les r&eacute;seaux sociaux
-        .col.l4.s12.photo-bloc
-          = image_tag 'logan_braga.jpg', :class => 'responsive-img circle'
-          %h5.light-green-text.darken-1.lowercase.small-caps Logan Braga
-          %p
+        .col.l4.s12.photo-bloc{:itemscope => true, :itemtype => "http://schema.org/Person"}
+          = image_tag 'logan_braga.jpg', :class => 'responsive-img circle', :itemprop => :image
+          %h5.light-green-text.darken-1.lowercase.small-caps{:itemprop => :name}
+            %span{:itemprop => :givenName}Logan
+            %span{:itemprop => :familyName}Braga
+          %p{:itemprop => :description}
             D&eacute;veloppement logiciel et site, maintenance
-        .col.l4.s12.photo-bloc
-          = image_tag 'maxime_guillermet.jpg', :class => 'responsive-img circle'
-          %h5.light-green-text.darken-1.lowercase.small-caps Maxime Guillermet
-          %p
+        .col.l4.s12.photo-bloc{:itemscope => true, :itemtype => "http://schema.org/Person"}
+          = image_tag 'maxime_guillermet.jpg', :class => 'responsive-img circle', :itemprop => :image
+          %h5.light-green-text.darken-1.lowercase.small-caps{:itemprop => :name}
+            %span{:itemprop => :givenName}Maxime
+            %span{:itemprop => :familyName}Guillermet
+          %p{:itemprop => :description}
             Design graphique, tutoriels et guides texte et vid&eacute;o
