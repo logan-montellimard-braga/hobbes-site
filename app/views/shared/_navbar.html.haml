@@ -1,12 +1,9 @@
 - provide :background, "nav-on"
 
 %ul#main_drop.dropdown-content
-  %li
-  %li
-    = nav_link "Communauté", page_path('community')
+  = nav_link "Communauté", page_path('community')
   %li.divider
-  %li
-    = nav_link_member
+  = nav_link_member
 
 %nav.white
   .nav-wrapper
@@ -14,12 +11,9 @@
       .col.s12.l8.offset-l2
         = logo_link_to_root "brand-logo "
         %ul#nav-mobile.right.side-nav
-          %li
-            = nav_link "hobbes", root_path
-          %li
-            = nav_link "infos", page_path('infos')
-          %li
-            = nav_link "téléchargement", page_path('download')
+          = nav_link "hobbes", root_path
+          = nav_link "infos", page_path('infos')
+          = nav_link "téléchargement", page_path('download')
           %li
             %a{href: :'#!', :class => "dropdown-button", :'data-activates' => "main_drop"}<
               espace membre
