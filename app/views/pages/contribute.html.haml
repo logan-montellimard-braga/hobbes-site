@@ -3,11 +3,52 @@
 
 = render 'shared/pages/band'
 
-%section
+%section.profil
   .container
     .row
-      %p
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-        vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-        no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      .col.s12.m10.offset-m1.download
+        .col.s12.text-left.m4.hide-on-small-only
+          %i.mdi-action-bug-report
+        .col.s12.m8.text-right
+          %h5 J'ai trouv&eacute; un bug
+          %p
+            Vous avez rep&eacute;r&eacute; un bug ou un plantage dans Hobbes ?
+            On est int&eacute;ress&eacute;s ! Rendez-vous sur
+            = link_to "Github", "https://github.com/loganbraga/hobbes"
+            pour le reporter dans l'onglet appropri&eacute;, ou
+            = link_to "contactez-nous", "contact"
+            si Github ne vous met pas &agrave; l'aise.
+          %br
+    .row
+      .col.s12.m10.offset-m1.download
+        .col.s12.m8
+          %h5 J'ai des id&eacute;es plein la t&ecirc;te
+          %p
+            Vous avez des suggestions, des id&eacute;es, des am&eacute;liorations
+            &agrave; nous faire part ? N'h&eacute;sitez pas !
+            %br
+            Ici aussi, rendez-vous sur
+            = link_to "Github", "https://github.com/loganbraga/hobbes"
+            pour proposer une
+            %b pull-request
+            si vous savez d&eacute;velopper. Sinon,
+            = link_to "contactez-nous.", "contact"
+          %br
+        .col.s12.text-right.m4.hide-on-small-only
+          %i.mdi-av-new-releases.light-green-text
+      .row
+        .col.s12.m10.offset-m1.download
+          .col.s12.text-left.m4.hide-on-small-only
+            %i.mdi-action-redeem
+          .col.s12.m8.text-right
+            %h5 Je veux vous faire un cadeau
+            %p
+              Malheureusement, nous n'avons pour le moment aucun moyen d'accepter
+              les donations.
+              %br
+              En attendant, vous pouvez toujours faire part de votre attachement &agrave; Hobbes
+              en 
+              %b mettant en favoris
+              notre
+              = link_to "page Github.", "https://github.com/loganbraga/hobbes"
+            %br

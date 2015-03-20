@@ -156,6 +156,10 @@ a.submit {
     @extend .brown-text;
     font-size: 10em;
   }
+
+  a:not(.btn) {
+    @extend .light-green-text;
+  }
 }
 
 blockquote {
