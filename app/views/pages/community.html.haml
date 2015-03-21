@@ -3,11 +3,41 @@
 
 = render 'shared/pages/band'
 
-%section
+%section.profil
   .container
     .row
-      %p
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-        vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-        no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      .col.s12.m10.offset-m1
+        %p
+          Hobbes est enti&egrave;rement personnalisable et modulable. Gr&acirc;ce &agrave; cela,
+          vous n'&ecirc;tes pas limit&eacute; dans vos configurations.
+          %br
+          %b Hobbes Communaut&eacute;
+          vous permet alors de les partager et prendre inspiration de celles des autres
+          en toute simplicit&eacute;, afin de faire de Hobbes l'exp&eacute;rience la plus plaisante possible.
+        %br
+        %p
+          Avec Hobbes Communaut&eacute;, partagez :
+          %ul
+            %li
+              %b Vos templates :
+              partagez vos mod&egrave;les HTML pour la g&eacute;n&eacute;ration des cours
+            %li
+              %b Vos fichiers d'abbr&eacute;viations
+              partagez vos fichiers .properties d'abbr&eacute;viations g&eacute;n&eacute;rales ou sp&eacute;cifiques &agrave; des mati&egrave;res particuli&egrave;res
+            %li
+              %b Vos variables dynamiques
+              partagez vos scripts Clojure de variables dynamiques .edn
+        %br
+      .row
+        .col.s12.m10.offset-m1.center
+          %hr
+          %br
+          - if user_signed_in?
+            = link_to "Partager ses fichiers", nil, :class => 'tooltipped center waves-effect waves-light btn btn-flat btn-large white-text light-green darken-1 btn-background-green', :"data-tooltip" => "Coming soon !"
+            &nbsp;
+            = link_to 'Voir les autres soumissions', nil, :class => 'tooltipped waves-effect waves-light btn btn-flat btn-large white-text btn-background-brown', :"data-tooltip" => "Coming soon !"
+          - else
+            = link_to "S'inscrire", new_user_registration_path, :class => 'center waves-effect waves-light btn btn-flat btn-large white-text light-green darken-1 btn-background-green'
+            &nbsp;
+            = link_to 'Se connecter', new_user_session_path, :class => 'waves-effect waves-light btn btn-flat btn-large white-text btn-background-brown'
+
