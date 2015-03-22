@@ -12,11 +12,11 @@
         .col.s12.m8.text-right
           %h5 Hobbes avec interface graphique
           %p
-            Contient le logiciel en ligne de commande et avec interface graphique.
+            Contient le logiciel avec interface graphique.
             %br
             Si vous ne savez pas quelle option prendre, c'est celle-ci !
           %br
-          %a.tooltipped.waves-effect.waves-light.btn.btn-flat.btn-large.white-text.light-green.darken-1.btn-background-green{'data-tooltip' => 'Version 0.1.0'}
+          %a.modal-trigger.tooltipped.waves-effect.waves-light.btn.btn-flat.btn-large.white-text.light-green.darken-1.btn-background-green{'data-tooltip' => "Version #{hobbes_version}", :href => "#gui-modal"}
             T&eacute;l&eacute;charger
     .row
       .col.s12.m10.offset-m1.download
@@ -27,7 +27,7 @@
             %br
             Pour les utilisateurs avanc&eacute;s.
           %br
-          %a.tooltipped.waves-effect.waves-light.btn.btn-flat.btn-large.white-text.light-green.darken-1.btn-background-green{'data-tooltip' => 'Version 0.1.0'}
+          %a.modal-trigger.tooltipped.waves-effect.waves-light.btn.btn-flat.btn-large.white-text.light-green.darken-1.btn-background-green{'data-tooltip' => "Version #{hobbes_version}", :href => "#cli-modal"}
             T&eacute;l&eacute;charger
         .col.s12.text-right.m4.hide-on-small-only
           %i.mdi-device-developer-mode
@@ -41,3 +41,43 @@
           Besoin d'aide pour faire vos premiers pas avec Hobbes ?
         = link_to 'Démarrage rapide', page_path('guides'), :class => 'waves-effect waves-light btn btn-flat btn-large white-text btn-background-brown'
 
+#gui-modal.modal.white
+  .modal-content.profil
+    %h5 Hobbes en interface graphique
+    %br
+    %p.center
+      S&eacute;lectionnez votre syst&egrave;me d'exploitation pour l'ex&eacute;cutable.
+    %p.center
+      %a.waves-effect.waves-light.btn.btn-large.white-text.blue.darken-1{:href => "downloads/gui/hobbes-#{hobbes_version}.exe"}
+        Windows
+      &nbsp;
+      %a.waves-effect.waves-light.btn.btn-large.white-text.yellow.darken-2{:href => "downloads/gui/hobbes-#{hobbes_version}"}
+        Mac OSX
+      &nbsp;
+      %a.waves-effect.waves-light.btn.btn-large.white-text.grey.darken-1{:href => "downloads/gui/hobbes-#{hobbes_version}"}
+        GNU/Linux
+    %p
+      Ou t&eacute;l&eacute;chargez directement le 
+      %a{:href => "downloads/gui/hobbes-#{hobbes_version}.jar"} fichier java .jar
+      du programme.
+
+#cli-modal.modal.white
+  .modal-content.profil
+    %h5 Hobbes en ligne de commande
+    %br
+    %p.center
+      S&eacute;lectionnez votre syst&egrave;me d'exploitation pour l'ex&eacute;cutable, &agrave; lancer depuis un terminal ou une invite de commande.
+    %p.center
+      %a.waves-effect.waves-light.btn.btn-large.white-text.blue.darken-1{:href => "downloads/cli/hobbes-#{hobbes_version}.exe"}
+        Windows
+      &nbsp;
+      %a.waves-effect.waves-light.btn.btn-large.white-text.yellow.darken-2{:href => "downloads/cli/hobbes-#{hobbes_version}"}
+        Mac OSX
+      &nbsp;
+      %a.waves-effect.waves-light.btn.btn-large.white-text.grey.darken-1{:href => "downloads/cli/hobbes-#{hobbes_version}"}
+        GNU/Linux
+    %p
+      Ou t&eacute;l&eacute;chargez directement le 
+      %a{:href => "downloads/cli/hobbes-#{hobbes_version}.jar"} fichier java .jar
+      du programme, &agrave; lancer en ligne de commande par l'interm&eacute;diaire de la commande
+      %code java -jar &lt;chemin_du_jar&gt;.
