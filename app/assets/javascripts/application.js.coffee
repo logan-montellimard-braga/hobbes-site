@@ -62,6 +62,7 @@ $(document).ready ->
 
   $(".dropdown-button").dropdown hover: false
   $(".button-collapse").sideNav()
+  $('.modal-trigger').leanModal()
   $('.tooltipped').tooltip delay: 100
   $('ul.tabs').tabs()
 

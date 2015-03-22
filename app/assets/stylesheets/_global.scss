@@ -166,3 +166,45 @@ blockquote {
   @extend .grey-text, .darken-1;
   border-left: 5px solid #8bc34a;
 }
+
+.modal {
+  margin-top: 60px;
+  a:not(.btn) {
+    @extend .light-green-text;
+  }
+}
+
+.collection {
+  .collection-header {
+    @extend .brown;
+
+    h6 {
+      font-weight: 600;
+      color: white;
+    }
+  }
+  .active {
+    @extend .light-green;
+    a {
+      color: white;
+    }
+  }
+}
+
+pre {
+  border: 1px solid #888;
+  padding: 10px;
+  border-left: 4px solid #8bc34a;
+}
+
+.profil p a:not(.btn) {
+  @extend .light-green-text;
+}
+
+p > code, li > code {
+  @extend .light-green-text;
+  font-family: "Inconsolata";
+  border-radius: 4px;
+  border: 1px solid #efefef;
+  padding: 1px;
+}

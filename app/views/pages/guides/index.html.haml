@@ -5,9 +5,35 @@
 
 %section
   .container
-    .row
-      %p
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-        vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-        no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    .row.profil
+      .col.s12.m10.offset-m1
+        %p
+          Retrouvez ici tous les guides d'utilisation Hobbes, regroup&eacute;s par cat&eacute;gories.
+          %br
+          Si vous souhaitez contribuer et &eacute;crire un guide ou proposer vos modifications, pensez &agrave;
+          = link_to "nous contacter.", "contact"
+        %p
+          Si vous faites vos premiers pas sur Hobbes, pensez &agrave; consulter notre guide de d&eacute;marrage rapide.
+        %p.center
+          = link_to 'Démarrage rapide', page_path('guides/quickstart'), :class => 'waves-effect waves-light btn btn-flat btn-large white-text btn-background-green'
+      .row
+        .col.s12.m10.offset-m1.profil
+          %hr
+          %br
+          %ul.collection.with-header
+            %li.collection-header
+              %h6 Le langage Hobbes
+            %li.collection-item
+              %a{:href => page_path('guides/quickstart')} D&eacute;marrage rapide
+            %li.collection-item
+              %a{:href => page_path('guides/syntax')} La syntaxe du langage
+            %li.collection-item
+              %a{:href => page_path('guides/abbreviations')} Abbr&eacute;viations
+            %li.collection-item
+              %a{:href => page_path('guides/variables')} Variables dynamiques
+            %li.collection-header
+              %h6 Personnalisation du programme
+            %li.collection-item
+              %a{:href => page_path('guides/configuring')} Abbr&eacute;viations et variables
+            %li.collection-item
+              %a{:href => page_path('guides/templates')} Templates personnalis&eacute;s

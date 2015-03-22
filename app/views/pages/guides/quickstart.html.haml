@@ -1,0 +1,360 @@
+- provide :title, 'Démarrage rapide'
+- provide :desc, "démarrer rapidement avec Hobbes"
+
+= render 'shared/pages/band_guides'
+
+%section
+  .container
+    .row
+      .col.s12.m10.offset-m1.profil
+        %p
+          Vous allez ici d&eacute;couvrir comment bien d&eacute;marrer avec Hobbes.
+          %br
+          Tout &ccedil;a prendra moins de 20 minutes, et vous serez pr&ecirc;ts &agrave; utiliser Hobbes quotidiennement, on vous l'assure&nbsp;!
+    .row
+      .col.s12.m10.offset-m1
+        %hr
+
+    .row
+      .col.s12.m10.offset-m1.profil
+        %h5 Concepts de base
+        %p
+          Afin de comprendre au mieux le fonctionnement de Hobbes, il convient d'&eacute;tudier bri&egrave;vement les
+          quelques notions cl&eacute;s qui le concernent.
+
+        %ul
+          %li
+            %b Les fichiers hob
+            sont les fichiers dans lesquels vous allez &eacute;crire vos cours. Ces fichiers sont reconnaissables &agrave; leur extension
+            %code .hob
+            , 
+            %code .hobbes
+            ,
+            %code .hob.txt
+            ou
+            %code .hobbes.txt
+            et contiennent du texte &eacute;crit selon la syntaxe du langage Hobbes.
+            %br
+          %br
+          %li
+            %b Le langage Hobbes
+            est la fa&ccedil;on dont vous &eacute;crivez vos cours dans des fichiers hob.
+            Cette syntaxe a &eacute;t&eacute; sp&eacute;cialement con&ccedil;ue pour la prise de cours par des &eacute;tudiants et la performance d'&eacute;criture.
+            %br
+            La syntaxe est simplissime ; voici un exemple explicite d'un cours tap&eacute; avec Hobbes :
+            %pre
+              %code
+                :preserve
+                  _titre Voici mon titre principal
+                    Et ici, nous avons un simple paragraphe, qui peut s'étendre
+                    sur plusieurs lignes, avec *du gras*, du __souligné__, du --barré--,
+                    de la ^mise en valeur^, de /l'italique/.
+
+                    J'ai sauté une ligne, ceci est donc un autre paragraphe.
+                    Je peux parler de choses comme des images.png ou des video.mp4,
+                    et elles seront automatiquement intégrées au rendu.
+                    Si je parle de quelque chose et que je glisse (exemple: un exemple) ou
+                    (ex: blabla), cela sera automatiquement reconnu et extrait
+                    en tant qu'exemple.
+
+                    _st Ici, un sous-titre
+                      On remarquera que le sous-titre est abbrégé ; je peux
+                      aussi écrire _stitre, _sTiT, etc... Tous les opérateurs Hobbes
+                      (qui commençent par un "_") sont flexibles.
+
+                    _sst Et ici, un titre de 3° niveau !
+                    _t3 Même chose, si je préfère la syntaxe "tX"
+                    _TITrE3 ici aussi ! Flexible !
+
+                    _def Titre de définition : contenu de ma définition, ici aussi
+                    sur autant de lignes que je veux, jusqu'à ce que je saute une ligne.
+
+                    Hop, retour en *paragraphe et en gras* ! Notons que j'aurais aussi pu
+                    écrire "_d" ou "_definition" ou encore "_dEfI" pour le même résultat ci-haut.
+
+                    _citation Auteur : ce qu'il a dit, là encore sur une ou
+                    plusieurs lignes! J'aurais aussi pu écrire "_c" ou "_ciTa", par exemple.
+
+                    Et vous comprenez le principe. Je vous avais dit que c'était simple !
+                    J'ai indenté mon code à chaque fois selon les titres et sous-titres,
+                    mais ce n'est pas obligatoire.
+            %p
+              La syntaxe est encore plus riche ; vous pouvez en apprendre plus sur la
+              = link_to "page de syntaxe Hobbes.", page_path('guides/syntax')
+          %li
+            %b Le compilateur
+            est le logiciel qui transforme vos cours en format hob vers des fichiers html.
+            %br
+            Il peut transformer un fichier seul vers un fichier html seul, ou un dossier complet
+            contenant des dossiers de mati&egrave;res (avec des cours en format hob &agrave; l'int&eacute;rieur)
+            vers un site local complet.
+            %br
+            Il est disponible en interface graphique ou en ligne de commande.
+          %br
+          %li
+            %b Les templates
+            sont des fichiers HTML basiques qui servent de squelette pour accueillir les cours
+            et leur contenu dynamique lors de la compilation. Un groupe de templates par d&eacute;faut
+            est fourni dans Hobbes.
+
+    .row
+      .col.s12.m10.offset-m1
+        %br
+        %hr
+        %br
+
+    .row
+      .col.s12.m10.offset-m1.profil
+        %h5 1. T&eacute;l&eacute;chargement
+        %p
+          Avant toute chose, assurez-vous d'avoir une installation de Java &agrave; jour et op&eacute;rationnelle.
+          Sinon, rendez-vous sur
+          = link_to "le site de java", "https://java.com/fr/download/"
+          et suivez les instructions.
+          %br
+          Le cas &eacute;ch&eacute;ant, vous pouvez poursuivre.
+        %p
+          Pour t&eacute;l&eacute;charger la derni&egrave;re version de Hobbes, rendez-vous sur la
+          = link_to 'page de téléchargements', page_path('download')
+          et s&eacute;lectionnez le support qui vous correspond.
+
+        %p
+          Si vous n'avez pas l'habitude des interfaces en ligne de commande, il serait peut-&ecirc;tre
+          plus judicieux de prendre la version avec interface graphique. Celle-ci est plus lourde, mais
+          plus intuitive pour les d&eacute;butants.
+          %br
+          À l'inverse, la version en ligne de commande est plus orient&eacute;e utilisateurs avanc&eacute;s.
+          Elle respecte les conventions Unix pour les interfaces en ligne de commande et ne devrait donc pas
+          &ecirc;tre trop d&eacute;paysante.
+
+        %p
+          Les versions binaires ex&eacute;cutables (.exe sous Windows par exemple) et les fichiers java .jar
+          contiennent le m&ecirc;me programme. La version ex&eacute;cutable est simplement un "emballage" autour
+          du fichier .jar.
+
+    .row
+      .col.s12.m10.offset-m1
+    .row
+      .col.s12.m10.offset-m1.profil
+        %h5 2. Installation
+        %p
+          C'est d&eacute;j&agrave; fait !
+          %br
+          Hobbes est distribu&eacute; en ex&eacute;cutable portable, sans d&eacute;pendances ext&eacute;rieures.
+          Si vous avez install&eacute; Java pr&eacute;c&eacute;demment, vous avez tous les pr&eacute;-requis pour lancer le programme
+        %p
+          Double-cliquez sur l'ex&eacute;cutable (ou lancez-le depuis un terminal selon le support choisi) et vous pourrez commencer.
+    .row
+      .col.s12.m10.offset-m1
+
+    .row
+      .col.s12.m10.offset-m1.profil
+        %h5 3. Prise de cours
+        %p
+          Vous pouvez d&eacute;sormais prendre vos cours dans notre langage Hobbes. Les fichiers hob &eacute;tant de simples fichiers textes,
+          vous pouvez utiliser n'importe quel &eacute;diteur de texte (mais pas de logiciel de traitement de texte comme Word ou OpenOffice !),
+          comme SublimeText, Brackets, Vim ou Emacs par exemple.
+          %br
+          Nous vous recommandons, pour un traitement facilit&eacute;, de suivre la structure suivante :
+          %ul
+            %li - Cr&eacute;ez un dossier par mati&egrave;re (Math&eacute;matiques, Anglais, etc...) &agrave; l'int&eacute;rieur d'un m&ecirc;me dossier (par exemple "Cours")
+            %li - Mettez vos cours li&eacute;s &agrave; la mati&egrave;re dans le dossier correspondant &agrave; cette mati&egrave;re. Si vous ajoutez des m&eacute;dias (images, sons, vid&eacute;os), placez-les dans ce m&ecirc;me dossier, avec les cours.
+
+        %p
+          Vous pouvez &eacute;galement
+          = link_to "télécharger notre dossier exemple", "/downloads/exemple.zip"
+          pour avoir un exemple concret d'organisation de ses cours pour les utiliser avec Hobbes.
+
+        %p Lorsque vous disposez de quelques mati&egrave;res et cours pr&ecirc;ts &agrave; &ecirc;tre compil&eacute;s, vous pouvez passer &agrave; la suite.
+    .row
+      .col.s12.m10.offset-m1
+        %hr
+    .row
+      .col.s12.m10.offset-m1.profil
+        %h5 4.a. Hobbes en interface graphique
+        %p
+          Une fois le programme lanc&eacute;, vous devriez avoir quelque chose comme &ccedil;a (l'apparence sera diff&eacute;rente selon votre syst&egrave;me d'exploitation, sa version
+          et le th&egrave;me graphique utilis&eacute;) :
+        %p.center
+          = link_to image_tag("hobbes-gui.png", {class: 'responsive-img'}), image_path("hobbes-gui.png")
+
+        %p
+          Commen&ccedil;ons par un apart&eacute; : la fonction "DUMPER" de Hobbes.
+          %br
+          Cette fonction vous permet de coller, dans un dossier de destination choisi, la configuration par d&eacute;faut de Hobbes : templates, abbr&eacute;viations et variables.
+          C'est utile, car cela vous permet de mieux comprendre comment Hobbes fonctionne, ainsi que de partir d'une base concr&egrave;te pour cr&eacute;er vos propres configurations.
+          %br Pour l'essayer, choisissez un r&eacute;pertoire de sortie (existant ou non) en cliquant sur le bouton de s&eacute;lection en face de "Sortie", puis appuyez sur "DUMPER". Et voil&agrave; !
+
+        %p
+          Maintenant que ce myst&eacute;rieux bouton est expliqu&eacute;, passons au plat de r&eacute;sistance, la compilation.
+          %br
+          %em
+            Attention, le s&eacute;lectionneur permet de s&eacute;lectionner &agrave; la fois des dossiers et des fichiers. Si vous double cliquez sur un dossier, il s'ouvre ; pour le s&eacute;lectionnez, appuyez plutôt sur entr&eacute;e ou le bouton "Ouvrir".
+          %br
+        %ol
+          %li
+            S&eacute;lectionnez en "Entr&eacute;e" votre dossier de cours, celui contenant les dossiers des mati&egrave;res (contenant, eux, les fichiers hob).
+          %br
+          %li
+            S&eacute;lectionnez en sortie un dossier quelconque, existant ou non, dans lequel vous souhaiteriez g&eacute;n&eacute;rer le site.
+          %br
+          %li
+            Le dossier "Configuration" n'est pas obligatoire. Si vous avez un dossier avec des configurations sp&eacute;ciales Hobbes (abbr&eacute;viations globales, templates, ...), indiquez-le ici, sinon
+            laissez vide.
+          %br
+          %li
+            Appuyez sur
+            %b "COMPILER"
+            et attendez. Au bout de quelques secondes, une alerte vous indique la fin de la compilation.
+          %br
+          %li
+            Rendez-vous dans le dossier choisi en sortie, et ouvrez la page "index.html" dans votre navigateur. Appr&eacute;ciez !
+
+        %p
+          Au niveau des options :
+        %ul
+          %li
+            +
+            %b "Force"
+            vous permet de forcer la re-compilation. Lorsque vous compilez un dossier vers un autre, Hobbes garde, avec un petit fichier dans le dossier de destination, les
+            dates de modification. Si vous re-faites la compilation avec les m&ecirc;mes dossiers d'entr&eacute;e et de sortie que pr&eacute;c&eacute;demment, seuls les nouveaux
+            fichiers et les fichiers ayant &eacute;t&eacute; modifi&eacute;s seront compil&eacute;s. Avec l'option "Force", tous seront recompil&eacute;s de force.
+          %br
+          %li
+            +
+            %b "Notice"
+            vous permet d'activer ou non l'ajout de la notice Hobbes en haut de chaque fichier compil&eacute;. Cette notice est un commentaire HTML (invisible dans le navigateur), qui
+            indique la date de compilation et le nom du programme. D&eacute;cocher cette case permet de ne pas ajouter cette notice.
+          %br
+          %li
+            +
+            %b "Auteur"
+            vous permet de changer l'auteur affich&eacute; dans les emplacements pr&eacute;vus &agrave; cet effet dans les templates utilis&eacute;s.
+          %br
+          %li
+            +
+            %b "Langue"
+            vous permet de changer la langue utilis&eacute;e par le compilateur. Cela change la langue indiqu&eacute;e dans le site g&eacute;n&eacute;r&eacute;, ainsi que le chemin de recherche
+            des variables et des abbr&eacute;viations.
+          %br
+          %li
+            +
+            %b "Mots/min"
+            vous permet de changer le nombre de mots par minutes pris en compte pour le calcul du temps estim&eacute; de lecture.
+    .row
+      .col.s12.m10.offset-m1
+        %hr
+
+    .row
+      .col.s12.m10.offset-m1.profil
+        %h5 4.b. Hobbes en ligne de commande
+        %p
+          Hobbes en ligne de commande fonctionne selon les m&ecirc;mes principes qu'en interface graphique.
+        %p
+          Ouvrez un terminal ou une invite de commande et localisez le chemin de l'ex&eacute;cutable Hobbes. Pour la suite, nous consid&eacute;rons que Hobbes a
+          &eacute;t&eacute; ajout&eacute; &agrave; votre $PATH et que vous pouvez donc l'utiliser directement depuis un shell.
+
+        %p
+          Pour afficher de l'aide, tapez
+          %code hobbes help
+          ou
+          %code hobbes -h
+          ou encore
+          %code hobbes --help
+          \.
+          %br
+          Pour afficher les informations de version, tapez
+          %code hobbes version
+          ou
+          %code hobbes --version
+          \.
+
+        %p
+          Pour "dumper" (coller la configuration par d&eacute;faut de Hobbes dans un r&eacute;pertoire de sortie), lancez
+          %br
+          %code hobbes dump mon/repertoire/de/sortie/
+          \. Vous pouvez &eacute;galement sp&eacute;cifier le r&eacute;pertoire de sortie avec l'option
+          %code -o
+          ou
+          %code --output=
+          \.
+
+        %p
+          Pour compiler un dossier entier de cours, lancez
+          %br
+          %code hobbes compile mon/repertoire/de/cours/ -o mon/dossier/de/destination
+          \. Vous pouvez &eacute;galement sp&eacute;cifier le r&eacute;pertoire d'entr&eacute;e
+          par l'option
+          %code -i
+          ou
+          %code --input=
+
+        %p
+          Pour compiler un fichier hob seul vers un fichier html seul, la commande est la m&ecirc;me.
+          %br
+          %code hobbes compile chemin/de/mon/fichier.hob -o chemin/voulu/de/mon/resultat.html
+          \. Hobbes d&eacute;tecte automatiquement si les arguments donn&eacute;s &agrave; "compile"
+          sont des dossiers ou des fichiers, et agit en cons&eacute;quences.
+
+        %p
+          Comme pour l'interface graphique, vous pouvez passer des options suppl&eacute;mentaires :
+        %ul
+          %li
+            %code -c
+            ,
+            %code --config-dir
+            vous permet de passer en argument le dossier de configuration &agrave; utiliser pour cette compilation.
+            %br
+            Par d&eacute;faut, Hobbes regarde ce qu'il trouve dans <dossier personnel>/.config/hobbes/ si aucun dossier de configuration
+            n'est donn&eacute; en argument. S'il ne trouve rien, il bascule sur sa configuration par d&eacute;faut interne.
+          %br
+          %li
+            %code -g
+            ,
+            %code --glob
+            vous permet de choisir, par un glob bash, quels fichiers doivent &ecirc;tre compil&eacute;s. Par d&eacute;faut, ce sont les
+            fichiers .hob, .hobbes, .hob.txt et .hobbes.txt, gr&acirc;ce au glob
+            %code *.{hob,hobbes,hob.txt,hobbes.txt}
+            \.
+          %br
+          %li
+            %code -w
+            ,
+            %code --words-per-minute
+            vous permet de sp&eacute;cifier le nombre de mots par minute (d&eacute;faut 200) &agrave; prendre en compte
+            lors du calcul du temps de lecture estim&eacute; pour chaque cours.
+          %br
+          %li
+            %code -u
+            ,
+            %code --user
+            vous permet de sp&eacute;cifier quel nom utiliser en tant qu'auteur des cours lors de la g&eacute;n&eacute;ration des templates.
+            Par d&eacute;faut, le nom de l'utilisateur actuellement connect&eacute; &agrave; la session est utilis&eacute;.
+          %br
+          %li
+            %code -l
+            ,
+            %code --lang
+            vous permet de choisir quelle langue utiliser pour la compilation (attribut "lang" html et chemins des abbr&eacute;viations et variables changent).
+          %br
+          %li
+            %code -f
+            ,
+            %code --force
+            vous permet de forcer la recompilation de chaque cours, m&ecirc;me s'il n'a pas &eacute;t&eacute; modifi&eacute; depuis la derni&egrave;re compilation.
+            Le temps de modification des cours est stock&eacute; dans un fichier ".modtimes.edn" dans le dossier de destination. Supprimer ce fichier avant la compilation a le m&ecirc;me effet.
+          %br
+          %li
+            %code -v
+            ,
+            %code --verbose
+            vous permet d'afficher des informations dans la sortie standard &agrave; chaque &eacute;tape de la compilation.
+          %br
+          %li
+            %code --no-notice
+            vous permet de d&eacute;sactiver la concat&eacute;nation de la notice Hobbes (un commentaire HTML indiquant la date de compilation)
+            au d&eacute;but de chaque fichier compil&eacute;. Cette option est "opt-out" ; la notice est activ&eacute;e par d&eacute;faut.
+
+        %br
+        %p
+          = link_to 'Retour aux guides', page_path('guides'), :class => 'waves-effect waves-light btn btn-flat btn-large white-text btn-background-brown'

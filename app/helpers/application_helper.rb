@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def hobbes_version
+    return "0.1.0-beta"
+  end
+
   def logo_link_to_root(klass = nil)
     link_to image_tag('hobbes_logo_only.png', :class => klass), root_path
   end
