@@ -129,6 +129,8 @@ a.submit {
   margin-top: 40px;
 
   img {
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
     width: 200px;
     height: 200px;
   }
@@ -176,16 +178,43 @@ blockquote {
 
 .collection {
   .collection-header {
-    @extend .brown;
+    background: #efefef;
 
     h6 {
       font-weight: 600;
-      color: white;
+      // color: white;
+    }
+  }
+  li.collection-item {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .collection-item {
+    a {
+      display: block;
+      width: 100%;
+      padding: 15px 0;
+    }
+    &:hover {
+      @extend .light-green;
+      background: image-url('background_vert.png');
+      background-size: cover;
+      background-position: bottom center;
+
+      a {
+        font-weight: bold;
+        color: white;
+      }
     }
   }
   .active {
     @extend .light-green;
+    @extend .light-green;
+    background: image-url('background_vert.png');
+    background-size: cover;
+    background-position: bottom center;
     a {
+      font-weight: bold;
       color: white;
     }
   }
