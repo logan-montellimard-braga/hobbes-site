@@ -1,0 +1,18 @@
+- provide :title, 'Configurer Hobbes'
+- provide :desc, "comment configurer Hobbes"
+
+= render 'shared/pages/band_guides'
+
+%section
+  .container
+    .row
+      .col.s12.m10.offset-m1.profil
+        %p
+
+    .row
+      .col.s12.m10.offset-m1.profil
+        %p.right.text-right
+          = link_to 'Précédent', page_path('guides/variables'), :class => 'tooltipped waves-effect waves-light btn btn-flat btn-large white-text btn-background-brown', "data-tooltip" => "Les variables"
+          = link_to 'Suivant', page_path('guides/abbrs-and-vars'), :class => 'tooltipped waves-effect waves-light btn btn-flat btn-large white-text btn-background-green', "data-tooltip" => "Abréviations et variables"
+          %br
+          = link_to "Retour aux guides", page_path('guides')

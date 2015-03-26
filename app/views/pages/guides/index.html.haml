@@ -14,6 +14,9 @@
           = link_to "nous contacter.", "contact"
         %p
           Si vous faites vos premiers pas sur Hobbes, pensez &agrave; consulter notre guide de d&eacute;marrage rapide.
+          %br
+          Les guides sont pr&eacute;sent&eacute;s dans un ordre de lecture conseill&eacute;.
+        %br
         %p.center
           = link_to 'Démarrage rapide', page_path('guides/quickstart'), :class => 'waves-effect waves-light btn btn-flat btn-large white-text btn-background-green'
       .row
@@ -28,12 +31,14 @@
             %li.collection-item
               %a{:href => page_path('guides/syntax')} La syntaxe du langage
             %li.collection-item
-              %a{:href => page_path('guides/abbreviations')} Abbr&eacute;viations
+              %a{:href => page_path('guides/abbreviations')} Abr&eacute;viations
             %li.collection-item
               %a{:href => page_path('guides/variables')} Variables dynamiques
             %li.collection-header
               %h6 Personnalisation du programme
             %li.collection-item
-              %a{:href => page_path('guides/configuring')} Abbr&eacute;viations et variables
+              %a{:href => page_path('guides/configuring')} Configurer Hobbes
+            %li.collection-item
+              %a{:href => page_path('guides/abbrs-and-vars')} Abr&eacute;viations et variables
             %li.collection-item
               %a{:href => page_path('guides/templates')} Templates personnalis&eacute;s

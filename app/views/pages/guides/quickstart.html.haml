@@ -305,7 +305,7 @@
             %code --config-dir
             vous permet de passer en argument le dossier de configuration &agrave; utiliser pour cette compilation.
             %br
-            Par d&eacute;faut, Hobbes regarde ce qu'il trouve dans <dossier personnel>/.config/hobbes/ si aucun dossier de configuration
+            Par d&eacute;faut, Hobbes regarde ce qu'il trouve dans &lt;dossier personnel&gt;/.config/hobbes/ si aucun dossier de configuration
             n'est donn&eacute; en argument. S'il ne trouve rien, il bascule sur sa configuration par d&eacute;faut interne.
           %br
           %li
@@ -356,5 +356,8 @@
             au d&eacute;but de chaque fichier compil&eacute;. Cette option est "opt-out" ; la notice est activ&eacute;e par d&eacute;faut.
 
         %br
-        %p
-          = link_to 'Retour aux guides', page_path('guides'), :class => 'waves-effect waves-light btn btn-flat btn-large white-text btn-background-brown'
+        %p.right.text-right
+          -# = link_to 'Précédent', "#!", :class => 'waves-effect waves-light btn btn-flat btn-large white-text btn-background-brown'
+          = link_to 'Suivant', page_path('guides/syntax'), :class => 'tooltipped waves-effect waves-light btn btn-flat btn-large white-text btn-background-green', "data-tooltip" => "La syntaxe du langage"
+          %br
+          = link_to "Retour aux guides", page_path('guides')

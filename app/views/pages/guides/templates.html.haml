@@ -1,0 +1,18 @@
+- provide :title, 'Configurer les templates'
+- provide :desc, "comment changer les templates Hobbes"
+
+= render 'shared/pages/band_guides'
+
+%section
+  .container
+    .row
+      .col.s12.m10.offset-m1.profil
+        %p
+
+    .row
+      .col.s12.m10.offset-m1.profil
+        %p.right.text-right
+          = link_to 'Précédent', page_path('guides/abbrs-and-vars'), :class => 'tooltipped waves-effect waves-light btn btn-flat btn-large white-text btn-background-brown', "data-tooltip" => "Abréviations et variables"
+          -# = link_to 'Suivant', "#!", :class => 'waves-effect waves-light btn btn-flat btn-large white-text btn-background-green'
+          %br
+          = link_to "Retour aux guides", page_path('guides')

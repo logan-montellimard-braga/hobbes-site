@@ -1,0 +1,18 @@
+- provide :title, 'Configurer les remplacements'
+- provide :desc, "comment configurer variables et abréviations"
+
+= render 'shared/pages/band_guides'
+
+%section
+  .container
+    .row
+      .col.s12.m10.offset-m1.profil
+        %p
+
+    .row
+      .col.s12.m10.offset-m1.profil
+        %p.right.text-right
+          = link_to 'Précédent', page_path('guides/configuring'), :class => 'tooltipped waves-effect waves-light btn btn-flat btn-large white-text btn-background-brown', "data-tooltip" => "Configurer Hobbes"
+          = link_to 'Suivant', page_path('guides/templates'), :class => 'tooltipped waves-effect waves-light btn btn-flat btn-large white-text btn-background-green', "data-tooltip" => "Les templates"
+          %br
+          = link_to "Retour aux guides", page_path('guides')

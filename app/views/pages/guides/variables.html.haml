@@ -1,0 +1,133 @@
+- provide :title, 'Les variables'
+- provide :desc, "guide détaillé sur les variables dynamiques"
+
+= render 'shared/pages/band_guides'
+
+%section
+  .container
+    .row
+      .col.s12.m10.offset-m1.profil
+        %p
+          Dans la lign&eacute;e des abr&eacute;viations, Hobbes int&egrave;gre un moteur de remplacement de variables dynamiques.
+          Cette fonctionnalit&eacute; vous permet de pr&eacute;voir et retarder l'ex&eacute;cution de code arbitraire jusqu'&agrave; la compilation
+          du fichier hob, et ainsi profiter de contenus dynamiques dans vos notes.
+
+    .row
+      .col.s12.m10.offset-m1.profil
+        %h5 Principe
+        %p
+          Les variables Hobbes sont, en quelque sorte, des abr&eacute;viations dont le remplacement est du code ex&eacute;cut&eacute; plutôt
+          qu'une simple chaîne de caract&egrave;res.
+          %br
+          Les variables sont ex&eacute;cut&eacute;es juste apr&egrave;s l'expansion des abr&eacute;viations, et la valeur retourn&eacute;e par le
+          morceau de code est utilis&eacute;e en tant que remplacement du nom de la variable dans le texte.
+    .row
+      .col.m10.offset-m1.profil.s12
+
+        %br
+        %h5 Utilisation
+        %p
+          Les variables sont des mots uniques commen&ccedil;ant par le caract&egrave;re
+          %code =
+          (pensez &agrave; "ce mot
+          %b sera &eacute;gal &agrave;
+          ce code") et suivis par un espace (l'espace est n&eacute;cessaire pour ne pas faire de remplacements en plein milieu de mots).
+        %p
+          Par exemple, &eacute;crire
+        %pre
+          %code
+            :preserve
+              aujourd'hui nous sommes le =date en =pays
+        %p
+          sera converti dynamiquement &agrave; la compilation en
+        %pre
+          %code
+            :preserve
+              aujourd'hui nous somme le 24-03-2015 en France
+        %p
+          %i (ces variables font partie des variables fran&ccedil;aises par d&eacute;faut)
+    .row
+      .col.m10.offset-m1.profil.s12
+        %hr
+
+    .row
+      .col.m10.offset-m1.profil.s12
+
+        %br
+        %h5 Configurer les variables
+        %p
+          Tout comme les abr&eacute;viations, les variables Hobbes se configurent via un fichier, ici "variables.edn".
+          %br
+          Ce fichier contient du code
+          = link_to 'Clojure', 'http://clojure.org'
+          , sous la forme d'une map dont la cl&eacute; est le nom de la variable et la valeur l'expression qui devra &ecirc;tre ex&eacute;cut&eacute;e.
+        %p
+          Par exemple, la variable
+          %code =date
+          pr&eacute;c&eacute;dente est impl&eacute;ment&eacute;e de la mani&egrave;re suivante
+          %pre
+            %code
+              :preserve
+                {:date (.format (java.text.SimpleDateFormat. "dd-MM-yyyy") (java.util.Date.))}
+        %p
+          Vous trouverez plus d'informations sur la page
+          = link_to 'de configuration des moteurs de remplacement.', page_path('guides/abbrs-and-vars')
+
+    .row
+      .col.m10.offset-m1.profil.s12
+        %br
+        %h5 Variables par d&eacute;faut
+        %p
+          Hobbes int&egrave;gre 7 variables fran&ccedil;aises par d&eacute;faut :
+        %ul
+          %li
+            %code =date
+            \: date au format jour-mois-ann&eacute;e jj-MM-aaaa
+          %li
+            %code =jour
+            \: num&eacute;ro du jour dans le mois, par exemple 3
+          %li
+            %code =mois
+            \: num&eacute;ro du mois
+          %li
+            %code =auteur
+            \: auteur du cours
+          %li
+            %code =langue
+            \: langue actuellement utilis&eacute;e
+          %li
+            %code =pays
+            \: pays de l'utilisateur actuellement connect&eacute;
+          %li
+            %code =os
+            \: syst&egrave;me d'exploitation tournant
+
+    .row
+      .col.m10.offset-m1.profil.s12
+        %br
+        %h5 Pour aller plus loin
+        %p
+          Les variables Hobbes sont ex&eacute;cut&eacute;es elles-aussi pendant l'&eacute;tape du pr&eacute;processeur, juste apr&egrave;s
+          l'expansion des abr&eacute;viations.
+          %br
+          Cela signifie que des abr&eacute;viations peuvent g&eacute;n&eacute;rer des variables qui seront remplac&eacute;es, mais pas l'inverse.
+          Les abr&eacute;viations produites par les variables ne seront jamais remplac&eacute;es.
+        %p
+          Comme les variables sont ex&eacute;cut&eacute;es avant l'analyse syntaxique du fichier, vous pouvez vous servir des variables pour g&eacute;n&eacute;rer
+          dynamiquement des op&eacute;rateurs Hobbes qui seront compil&eacute;s nativement.
+
+        %p
+          Gardez en consid&eacute;ration que les variables sont ex&eacute;cut&eacute;es pour chaque fichier, m&ecirc;me si aucune n'apparaît dans le texte. Cela signifie qu'il faut donc :
+        %ol
+          %li &Eacute;viter les effets de bords dans les variables
+          %li &Eacute;viter les codes au temps de calcul &eacute;lev&eacute;
+          %li S&eacute;parer au maximum les variables entre mati&egrave;res pour limiter le nombre de variables trait&eacute;es pour un m&ecirc;me fichier
+
+
+    .row
+      .col.s12.m10.offset-m1.profil
+        %p.right.text-right
+          = link_to 'Précédent', page_path('guides/abbreviations'), :class => 'tooltipped waves-effect waves-light btn btn-flat btn-large white-text btn-background-brown', "data-tooltip" => "Les abréviations"
+          = link_to 'Suivant', page_path('guides/configuring'), :class => 'tooltipped waves-effect waves-light btn btn-flat btn-large white-text btn-background-green', "data-tooltip" => "Configurer Hobbes"
+          %br
+          = link_to "Retour aux guides", page_path('guides')

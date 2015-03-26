@@ -1,0 +1,391 @@
+- provide :title, 'La syntaxe Hobbes'
+- provide :desc, "guide détaillé sur la syntaxe du langage"
+
+= render 'shared/pages/band_guides'
+
+%section
+  .container
+    .row
+      .col.s12.m10.offset-m1.profil
+        %p
+          La syntaxe Hobbes, bien que simple &agrave; apprendre et utiliser, s'av&egrave;re aussi &ecirc;tre tr&egrave;s riche.
+          Vous trouverez ici une r&eacute;f&eacute;rence exhaustive des possibilit&eacute;s de celle-ci.
+
+    .row
+      .col.s12.m10.offset-m1
+        %hr
+
+    .row
+      .col.s12.m10.offset-m1.profil
+        %br
+        %h4 Les op&eacute;rateurs racines
+        %p
+          Les op&eacute;rateurs racines (ou hors-paragraphe) sont les op&eacute;rateurs qui commencent par le caract&egrave;re
+          %code _
+          suivi d'un nom flexible, insensible &agrave; la casse et compressible. Ils se poursuivent jusqu'&agrave; la fin de la ligne et le
+          saut de la ligne suivante.
+          %br
+          Ils repr&eacute;sentent les constructions racines, qui peuvent contenir d'autres &eacute;l&eacute;ments, comme les titres,
+          les paragraphes, les citations, les d&eacute;finitions, etc...
+        %br
+        %h5 Commentaires
+        %p
+          Hobbes vous permet d'ins&eacute;rer des commentaires dans vos documents. Ces commentaires fonctionnent de la m&ecirc;me mani&egrave;re que
+          les commentaires en langages de programmation : ils seront totalement ignor&eacute;s par le compilateur.
+          %br
+          Deux types de commentaires existent : les commentaires de fin de ligne, qui commencent par
+          %code !!
+          et ignorent le texte jusqu'&agrave; la fin de la ligne, et les commentaires multilignes ou &agrave; d&eacute;limitation, qui ignorent tout
+          le texte compris entre
+          %code !*
+          et
+          %code *!
+          \.
+          %br
+          Par exemple
+        %pre
+          %code
+            :preserve
+              Ici un texte de paragraphe !! ceci est un commentaire
+
+              Ici un texte de paragraphe. !* tout &ccedil;a
+              est compl&egrave;tement ignor&eacute; par le compilateur *! et mon paragraphe continu.
+        %br
+        %h5 Titres
+        %p
+          Les titres Hobbes sont directement convertis en titres HTML. En cons&eacute;quences, le langage supporte 6 niveaux de titres, un titre de premier
+          niveau repr&eacute;sentant le titre le plus important du document, et les titres de niveau 6 les moins importants.
+          %br
+          Un titre s'&eacute;crit de la mani&egrave;re suivante :
+          %pre
+            %code
+              :preserve
+                _titre Mon titre de 1er niveau, jusqu'&agrave; la fin de la ligne
+                _t Toujours un titre de 1er niveau
+                _t1 L&agrave; encore
+                _TitR Et l&agrave; aussi, la syntaxe est souple
+
+                _stitre Un sous-titre, ou titre de niveau 2
+                _st Toujours un titre de niveau 2
+                _t2 Ici aussi
+
+                _sstitre L&agrave;, un titre de niveau 3
+                _t3 Aussi utilisable comme &ccedil;a...
+                _sst Ou comme &ccedil;a, entre autres
+
+                _ssstitre Vous l'aurez compris, titre de niveau 4
+                _t4 En version compress&eacute;e
+                _ssst Ou ici aussi
+
+        %br
+        %h5 Listes
+        %p
+          Les listes Hobbes sont inspir&eacute;es de la fa&ccedil;on dont on pense intuitivement &agrave; repr&eacute;senter des listes sur papier.
+          Ainsi, vous pouvez utiliser les caract&egrave;res suivants pour d&eacute;limiter un &eacute;l&eacute;ment de liste non ordonn&eacute;e :
+          %code + * - : % $ & ~ # '
+          , suivis d'un espace :
+          %pre
+            %code
+              :preserve
+                + Un &eacute;l&eacute;ment de liste
+                + Un autre
+                * Ici aussi, d'ailleurs
+                # et l&agrave; encore
+        %p
+          Les listes ordonn&eacute;es sont un poil plus strictes :
+          %pre
+            %code
+              :preserve
+                1. Mon premier &eacute;l&eacute;ment
+                2. Mon second
+                3. Et mon troisi&egrave;me
+        %p
+          Notez que les num&eacute;ros sont l&agrave; pour vous aider ; une liste &eacute;crite
+        %pre
+          %code
+            :preserve
+              99. Mon premier &eacute;l&eacute;ment
+              34. Mon second
+              07. Et mon troisi&egrave;me
+        %p
+          produira le m&ecirc;me r&eacute;sultat ordonn&eacute; de 1 &agrave; 3 que le premier exemple.
+        %p
+          Attention, les listes doivent suivre une ligne vide et pr&eacute;c&eacute;der une ligne vide afin qu'elles ne soient pas consid&eacute;r&eacute;es comme
+          des &eacute;l&eacute;ments d'un paragraphe.
+
+        %br
+        %h5 Citations
+        %p
+          Les citations Hobbes suivent &eacute;galement la structure des &eacute;l&eacute;ments de citation en HTML5.
+          %br
+          Une citation se compose d'une premi&egrave;re partie, l'auteur ou la source, suivie du caract&egrave;re
+          %code :
+          , suivi d'un texte, jusqu'&agrave; un saut de ligne vide, qui repr&eacute;sente la citation. Par exemple :
+        %pre
+          %code
+            :preserve
+              _citation Batman : I'm Batman, et
+              sur plusieurs lignes.
+        %p
+          produira une citation "I'm Batman, et sur plusieurs lignes", accompagn&eacute;e du nom de l'auteur "Batman".
+          %br
+          Notez que nous aurions aussi pu &eacute;crire
+          %code _c
+          ,
+          %code _cita
+          ou
+          %code _CitaTiOn
+          (entre autres) pour l'op&eacute;rateur.
+
+        %br
+        %h5 D&eacute;finitions
+        %p
+          Les d&eacute;finitions suivent la m&ecirc;me structure que les citations : une premi&egrave;re partie repr&eacute;sentant
+          le titre de la d&eacute;finition ou l'&eacute;l&eacute;ment d&eacute;fini, suivi du caract&egrave;re
+          %code :
+          , suivi d'un texte jusqu'&agrave; un saut de ligne vide, qui repr&eacute;sente le corps de la d&eacute;finition. Par exemple :
+        %pre
+          %code
+            :preserve
+              _definition Hobbes : langage de prise de notes
+              sp&eacute;cialement con&ccedil;u pour les
+              &eacute;tudiants, par des &eacute;tudiants.
+        %p
+          Ici encore, nous aurions pu utiliser
+          %code _d
+          ,
+          %code _def
+          ou
+          %code _DefIniT
+          pour l'op&eacute;rateur, par exemple.
+
+        %br
+        %h5 Exemples
+        %p
+          Hobbes permet l'insertion d'exemples globaux, hors-paragraphe. Leur syntaxe est toujours fid&egrave;le &agrave; la syntaxe Hobbes,
+          et produit un div de classe 'exemple' avec un paragraphe. Un exemple est d&eacute;fini par l'op&eacute;rateur d'exemple, et un texte
+          qui se poursuit jusqu'&agrave; un saut de ligne vide.
+        %pre
+          %code
+            :preserve
+              _exemple Voici un exemple, qui reprend
+              peut-&ecirc;tre les points pr&eacute;c&eacute;dents du
+              cours ou les points suivants.
+        %p
+          Nous aurions aussi pu utiliser
+          %code _e
+          ou
+          %code _ex
+          pour l'op&eacute;rateur, entre autres.
+        %br
+        %h5 Blocs de code
+        %p
+          Vous pouvez ins&eacute;rer des blocs de code avec l'op&eacute;rateur de code, suivi d'un retour &agrave; la ligne
+          et de lignes de code, jusqu'&agrave; un saut de ligne vide. Par exemple :
+        %pre
+          %code
+            :preserve
+              _code
+              Ceci est un code
+              qui sera laiss&eacute; comme tel.
+        %br
+        %h5 M&eacute;dias
+        %p
+          Vous pouvez ins&eacute;rer des m&eacute;dias (image et vid&eacute;os) hors-paragraphes de la mani&egrave;re suivante :
+        %pre
+          %code
+            :preserve
+              _image L&eacute;gende de l'image obligatoire : chemin/de/mon/image.png
+
+              _video source/de/ma/video.mp4
+        %p
+          Comme toujours, les op&eacute;rateurs sont flexibles et compressibles, par exemple en
+          %code _img
+          ,
+          %code _i
+          ou
+          %code _v
+          (pour la vid&eacute;o).
+        %br
+        %h5 S&eacute;parateurs
+        %p
+          Vous pouvez ins&eacute;rer des s&eacute;parateurs de contenu entre vos diff&eacute;rents &eacute;l&eacute;ments. Ces s&eacute;parateurs seront
+          rendus sous forme d'une ligne fine horizontale.
+          %br
+          Une s&eacute;paration est d&eacute;tect&eacute;e lorsque 3 (ou plus) caract&egrave;res de s&eacute;paration cons&eacute;cutif sont tap&eacute;s. Ces
+          caract&egrave;res sont les m&ecirc;mes que pour les listes non ordonn&eacute;es, &agrave; savoir
+          %code + * - : % $ & ~ # '
+          \.
+        %pre
+          %code
+            :preserve
+              ++++
+
+              *************
+
+              -------------------
+
+              *+-$#'
+        %p
+          L&agrave; encore, les s&eacute;parateurs doivent suivre une ligne vide et pr&eacute;c&eacute;der une ligne vide, afin de ne pas &ecirc;tre
+          consid&eacute;r&eacute;s comme &eacute;l&eacute;ments d'un paragraphe.
+
+    .row
+      .col.s12.m10.offset-m1
+        %hr
+
+    .row
+      .col.s12.m10.offset-m1.profil
+        %br
+        %h4 Les op&eacute;rateurs imbriqu&eacute;s
+        %p
+          Les op&eacute;rateurs imbriqu&eacute;s sont les op&eacute;rateurs qui repr&eacute;sentent des op&eacute;rations
+          de modification du texte &eacute;crit.
+          %br
+          Ces op&eacute;rateurs sont contenus &agrave; l'int&eacute;rieur des op&eacute;rateurs racines. Par exemple, un titre ou un paragraphe
+          peuvent contenir du gras ou de l'italique. Chacun des &eacute;l&eacute;ments racines ci-hauts peut contenir chacun des &eacute;l&eacute;ments suivants.
+        %br
+        %h5 Gras
+        %p
+          Pour mettre du texte en gras, entourez-le par le caract&egrave;re
+          %code *
+          \.
+          %br
+          Par exemple
+        %pre
+          %code
+            :preserve
+              Un texte *en gras*.
+        %br
+        %h5 Italique
+        %p
+          Pour mettre du texte en italique, entourez-le par le caract&egrave;re
+          %code /
+          \.
+          %br
+          Par exemple
+        %pre
+          %code
+            :preserve
+              Un texte /en italique/.
+        %br
+        %h5 Surlignage
+        %p
+          Pour surligner (mettre en valeur, en couleur) un texte, entourez-le par le caract&egrave;re
+          %code ^
+          \.
+          %br
+          Par exemple
+        %pre
+          %code
+            :preserve
+              Un texte ^en valeur^.
+        %br
+        %h5 Soulignage
+        %p
+          Pour souligner un texte, entourez-le par le caract&egrave;re
+          %code _
+          \.
+          %br
+          Par exemple
+        %pre
+          %code
+            :preserve
+              Un texte _qui est soulign&eacute;_.
+        %br
+        %h5 Raturage
+        %p
+          Pour raturer un texte, entourez-le par les caract&egrave;res
+          %code --
+          \.
+          %br
+          Par exemple
+        %pre
+          %code
+            :preserve
+              Un texte --ratur&eacute;, effac&eacute;--.
+        %br
+        %h5 Liens
+        %p
+          Hobbes int&egrave;gre deux types de liens : internes et externes.
+        %p
+          Les liens internes sont des liens vers un cours/une note d'une m&ecirc;me mati&egrave;re (donc dans le m&ecirc;me dossier que la note courante).
+          %br
+          Pour r&eacute;f&eacute;rencer un cours, tapez les caract&egrave;res
+          %code ->
+          suivis du nom de ce cours, sans espaces. Utilisez le nom r&eacute;el de ce cours (par exemple "monChapitreUn" ou "mon_chapitre_un") ; lors de la g&eacute;n&eacute;ration,
+          le texte du lien sera transform&eacute; pour qu'il soit agr&eacute;able &agrave; lire (ici, "Mon Chapitre Un").
+          %br
+          Par exemple
+        %pre
+          %code
+            :preserve
+              Je fais ici r&eacute;f&eacute;rence &agrave; une note externe vers le ->chapitre_un.
+
+        %br
+        %p
+          Les liens externes sont des liens vers des sites ext&eacute;rieurs. Si vous rentrez l'URL compl&egrave;te, celle-ci est automatiquement d&eacute;tect&eacute;e et
+          extraite pour &ecirc;tre transform&eacute;e en lien. Le texte du lien sera le nom du domaine, s'il a pu &ecirc;tre extrait.
+          %br
+          Par exemple
+        %pre
+          %code
+            :preserve
+              Et voici un lien vers http://google.com/ dont le texte sera "Google.com".
+        %br
+        %h5 Images
+        %p
+          Comme les liens, les images sont d&eacute;tect&eacute;es automatiquement &agrave; l'int&eacute;rieur des paragraphes pour &ecirc;tre affich&eacute;es.
+          Pour cela, tapez simplement le nom de l'image avec son extension. Les extensions reconnues sont png, jp(e)g, gif et bmp.
+          %br
+          Par exemple
+        %pre
+          %code
+            :preserve
+              Dans mon paragraphe, je fais r&eacute;f&eacute;rence &agrave; mon image.png et
+              elle sera automatiquement ins&eacute;r&eacute;e.
+        %br
+        %h5 Vid&eacute;os
+        %p
+          Les vid&eacute;os sont &eacute;galement automatiquement d&eacute;tect&eacute;es, tout comme les images. Tapez simpelment le nom de la vid&eacute;o et son extension.
+          Les extensions reconnues sont mp4, avi, wmv, webm, mov, 3gp, ogg et ogv.
+          %br
+          Par exemple
+          %pre
+            %code
+              :preserve
+                Je fais r&eacute;f&eacute;rence &agrave; ma video.mp4 qui sera automatiquement ins&eacute;r&eacute;e.
+        %br
+        %h5 Code
+        %p
+          Pour ins&eacute;rer du code en ligne, entourez le texte des caract&egrave;res
+          %code <
+          et
+          %code >
+          \. Par exemple
+        %pre
+          %code
+            :preserve
+              Voici un morceau de code en Clojure <(+ 1 3 4)>.
+        %br
+        %h5 Erreurs de compr&eacute;hension
+        %p
+          Lorsque le cours que vous &eacute;crivez va trop vite, il peut vous arriver de ne pas avoir le temps de saisir certaines parties enti&egrave;rement.
+          Hobbes a pr&eacute;vu le coup et vous permet de symboliser ces parties par les caract&egrave;res sp&eacute;ciaux
+          %code #??
+          (les "?" peuvent &ecirc;tre r&eacute;p&eacute;t&eacute;es autant de fois que voulues). Lors de la compilation, ils seront remplac&eacute;s par un &eacute;l&eacute;ment
+          &agrave; la classe "missing", pouvant ainsi &ecirc;tre utilis&eacute; dans les templates pour rapeller qu'un texte est manquant et doit &ecirc;tre r&eacute;cup&eacute;r&eacute;.
+          %br
+          Par exemple
+        %pre
+          %code
+            :preserve
+              Je tape un texte vite mais il me #??? un mot !
+
+    .row
+      .col.s12.m10.offset-m1.profil
+        %p.right.text-right
+          = link_to 'Précédent', page_path('guides/quickstart'), :class => 'tooltipped waves-effect waves-light btn btn-flat btn-large white-text btn-background-brown', "data-tooltip" => "Démarrage rapide"
+          = link_to 'Suivant', page_path('guides/abbreviations'), :class => 'tooltipped waves-effect waves-light btn btn-flat btn-large white-text btn-background-green', "data-tooltip" => "Les abréviations"
+          %br
+          = link_to "Retour aux guides", page_path('guides')

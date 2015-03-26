@@ -1,0 +1,380 @@
+- provide :title, 'Les abréviations'
+- provide :desc, "guide détaillé sur les abréviations"
+
+= render 'shared/pages/band_guides'
+
+%section
+  .container
+    .row
+      .col.s12.m10.offset-m1.profil
+        %p
+          Parce que vous avez g&eacute;n&eacute;ralement besoin d'&eacute;crire vos notes le plus rapidement possible, Hobbes int&egrave;gre un moteur
+          d'abr&eacute;viations complet et enti&egrave;rement configurable.
+
+    .row
+      .col.s12.m10.offset-m1.profil
+        %h5 Principe
+        %p
+          Les abr&eacute;viations Hobbes doivent d'abord &ecirc;tre diff&eacute;renci&eacute;es des abr&eacute;viations automatiques
+          que vous avez pu configurer dans votre &eacute;diteur de texte. Hobbes n'intervient pas (et ne le pourrait de toute fa&ccedil;on pas) sur ces derni&egrave;res.
+          En cons&eacute;quences, si vous voulez simplement remplacer une suite de caract&egrave;res directs par une autre suite de caract&egrave;res pendant
+          que vous tapez votre texte, il est conseill&eacute; de param&eacute;trer votre &eacute;diteur de texte favori pour qu'il le fasse ; c'est son rôle.
+        %p
+          À l'inverse, les abr&eacute;viations Hobbes sont des remplacements de contenus r&eacute;alis&eacute;s &agrave; la compilation. Ces abr&eacute;viations d&eacute;pendent
+          donc d'un fichier de configuration, ce qui signifie qu'elles sont compl&egrave;tement modulables. Vous pouvez ainsi changer le sens d'une abr&eacute;viation Hobbes d'une mati&egrave;re &agrave; l'autre,
+          d'une compilation &agrave; l'autre, ou selon la langue ou l'utilisateur connect&eacute;.
+    .row
+      .col.m10.offset-m1.profil.s12
+
+        %br
+        %h5 Utilisation
+        %p
+          Les abr&eacute;viations Hobbes sont des mots commen&ccedil;ant par le caract&egrave;re
+          %code ~
+          (pensez &agrave; "cette suite de caract&egrave;res est
+          %b environ &eacute;gale
+          &agrave; celle-ci") et suivis par un espace (l'espace est n&eacute;cessaire pour ne pas faire de remplacements en plein milieu de mots).
+        %p
+          Par exemple, &eacute;crire
+          %pre
+            %code
+              :preserve
+                mon ~adr se situe ~fg du ~Mal Leclerc,
+                au ~rdc de l'immeuble juste ~av le ~fl ~St Gilles.
+        %p
+          pourra &ecirc;tre transform&eacute; lors de la compilation en
+          %pre
+            %code
+              :preserve
+                mon adresse se situe au faubourg du Mar&eacute;chal Leclerc,
+                au rez-de-chauss&eacute;e de l'immeuble juste avant le fleuve Saint Gilles.
+
+        %p
+          %i
+            (ces abr&eacute;viations font partie des 230+ abr&eacute;viations par d&eacute;faut, tir&eacute;es de la liste Wikip&eacute;dia des abr&eacute;viations les plus usit&eacute;es en fran&ccedil;ais).
+
+        %p
+          Si vous utilisez le caract&egrave;re
+          %code ~
+          suivi d'une abr&eacute;viation non d&eacute;finie, rien ne sera remplac&eacute; (et le ~ restera donc).
+    .row
+      .col.m10.offset-m1.profil.s12
+        %hr
+
+    .row
+      .col.m10.offset-m1.profil.s12
+
+        %br
+        %h5 Configurer les abr&eacute;viations
+        %p
+          Les abr&eacute;viations Hobbes se configurent via un fichier "abbreviations.properties", o&ugrave; il suffit d'&eacute;crire une abr&eacute;viation par ligne, sous
+          la forme
+          %pre
+            %code
+              :preserve
+                raccourci = remplacement
+        %p
+          Vous trouverez plus d'informations sur la page
+          = link_to 'de configuration des moteurs de remplacement.', page_path('guides/abbrs-and-vars')
+
+    .row
+      .col.m10.offset-m1.profil.s12
+        %br
+        %h5 Abr&eacute;viations par d&eacute;faut
+        %p
+          Le fichier d'abr&eacute;viations par d&eacute;faut contient plus de 230 abr&eacute;viations fran&ccedil;aises, m&eacute;langeant les plus utilis&eacute;es
+          aux plus adapt&eacute;es pour la prise de notes d'&eacute;tudiants.
+          %br
+          Vous pouvez
+          %a.modal-trigger{:href => "#abrs-modal"}
+            voir la liste des abr&eacute;viations par d&eacute;faut.
+
+    .row
+      .col.m10.offset-m1.profil.s12
+        %br
+        %h5 Pour aller plus loin
+        %p
+          Les abr&eacute;viations Hobbes sont remplac&eacute;es lors de l'&eacute;tape du "pr&eacute;processeur", c'est-&agrave;-dire avant l'analyse du texte pour
+          en extraire les &eacute;l&eacute;ments (titres, gras, images, etc...).
+          %br
+          Concr&egrave;tement, cela signifie que vous pouvez vous servir d'abr&eacute;viations personnalis&eacute;es pour r&eacute;aliser de la "m&eacute;ta-&eacute;criture" :
+          une abr&eacute;viation peut &ecirc;tre remplac&eacute;e par un op&eacute;rateur Hobbes, qui sera compil&eacute; comme le reste du texte.
+        %p
+          Par exemple, vous pouvez d&eacute;finir une abr&eacute;viation
+        %pre
+          %code
+            :preserve
+              batman = _citation Batman : I'm Batman !
+        %p
+          pour ins&eacute;rer la citation de votre auteur pr&eacute;f&eacute;r&eacute; par un simple
+          %code ~batman
+          dans vos texte ; l'abr&eacute;viation sera, au tout d&eacute;but de la compilation, convertie en l'op&eacute;rateur Hobbes de citation, qui sera compil&eacute;
+          comme si vous l'aviez &eacute;crit originellement.
+        %p
+          Notez que l'expansion des abr&eacute;viations n'est pas r&eacute;cursive ; si une abr&eacute;viation est remplac&eacute;e par une chaîne de caract&egrave;re qui
+          contient une autre abr&eacute;viation, celle-ci ne sera pas rempla&ccedil;&eacute;e.
+          %br
+          Par exemple, si vous d&eacute;finissez une abr&eacute;viation
+        %pre
+          %code
+            :preserve
+              recur = appel r&eacute;cursif ~recur
+        %p
+          appeler
+          %code
+            \~recur
+          produira
+          %code
+            appel r&eacute;cursif ~recur
+          , et s'arr&ecirc;tera l&agrave; pour cette chaîne de caract&egrave;res, sans provoquer l'expansion du
+          %code
+            \~recur
+          produit.
+
+    .row
+      .col.s12.m10.offset-m1.profil
+        %p.right.text-right
+          = link_to 'Précédent', page_path('guides/syntax'), :class => 'tooltipped waves-effect waves-light btn btn-flat btn-large white-text btn-background-brown', "data-tooltip" => "La syntaxe du langage"
+          = link_to 'Suivant', page_path('guides/variables'), :class => 'tooltipped waves-effect waves-light btn btn-flat btn-large white-text btn-background-green', "data-tooltip" => "Les variables"
+          %br
+          = link_to "Retour aux guides", page_path('guides')
+
+#abrs-modal.modal.white
+  .modal-content.profil
+    %h5 Abr&eacute;viations par d&eacute;faut
+    %br
+    %pre
+      %code
+        :preserve
+          /s     = sous
+          abbr   = abbréviation
+          adr    = adresse
+          ann    = annexe
+          app    = appartement
+          appt   = appartement
+          apr    = après
+          arrt   = arrondissement
+          art    = article
+          auj    = aujourd’hui
+          aujrd  = aujourd'hui
+          av     = avant
+          av     = avenue
+          avc    = avec
+          ave    = avenue
+          avk    = avec
+          bac    = baccalauréat
+          bat    = bon à tirer
+          bcp    = beaucoup
+          bd     = boulevard
+          bibl   = bibliothèque
+          blvd   = boulevard
+          Bon    = baron
+          Bonne  = baronne
+          BP     = boîte postale
+          BTP    = Bâtiment et Travaux Publics
+          bât    = bâtiment
+          c-a-d  = c'est-à-dire
+          ca     = environ
+          cad    = c'est-à-dire
+          Cal    = cardinal
+          cc     = copie conforme
+          Cdt    = commandant
+          cedex  = Courrier d’entreprise à distribution exceptionnelle
+          Cel    = colonel
+          cf     = voir aussi
+          chap   = chapitre
+          Chr    = chevalier
+          Cie    = compagnie
+          cie    = compagnie
+          cm     = centimètre
+          CN     = Conditions Nécessaires
+          Cne    = capitaine
+          CNS    = Conditions Nécessaires et Suffisantes
+          coll   = collection
+          contr  = contraire
+          cpdt   = cependant
+          CQFD   = ce qu’il fallait démontrer
+          CS     = Conditions Suffisantes
+          Cte    = comte
+          Ctesse = comtesse
+          CV     = curriculum vitæ
+          dir    = directeur
+          Dir    = direction
+          Diron  = direction
+          doct   = docteur
+          dom    = domicile
+          Don    = division
+          dpdv   = du point de vue
+          Dr     = docteur
+          Dre    = docteure
+          ds     = dans
+          dsl    = désolé
+          dvlpt  = développement
+          dvt    = devant
+          env    = environ
+          etc    = et cetera
+          Ets    = établissements
+          EU     = États-Unis
+          excl   = exclusivement
+          exp    = expéditeur
+          fact   = facture
+          ff     = folios, feuillets
+          fg     = faubourg
+          fig    = figure
+          fin    = finance
+          fl     = fleuve
+          fol    = folio
+          fr     = français
+          féd    = fédéral
+          fém    = féminin
+          févr   = février
+          Gal    = général
+          gd     = grand
+          gde    = grande
+          gon    = grade
+          gouv   = gouvernement
+          h      = heure
+          hab    = habitant
+          HS     = Hors Service
+          HT     = hors taxes
+          ibid.  = au même endroit
+          incl   = inclusivement
+          inf    = infini
+          Ing    = Ingénieur
+          Ir     = ingénieur civil
+          j      = jour
+          J.O    = jeux Olympiques
+          JF     = jeune femme
+          JH     = jeune homme
+          jms    = jamais
+          JO     = journal officiel
+          jtm    = je t'aime
+          K7     = cassette
+          kg     = kilogramme
+          km     = kilomètre
+          Lt     = lieutenant
+          ltée   = limitée
+          M      = monsieur
+          M-A    = Moyen Âge
+          m-a    = Moyen Âge
+          m-à-j  = Mise à jour
+          MA     = Moyen Âge
+          maj    = Mise à jour
+          Mal    = maréchal
+          masc   = masculin
+          max    = maximum
+          Md     = marchand
+          Md     = Milliard
+          Mdr    = Mort de rire
+          Me     = maître
+          Mes    = maîtres
+          Mgr    = Monseigneur
+          min    = minimum
+          Mis    = marquis
+          Mise   = marquise
+          Mlle   = mademoiselle
+          Mlles  = mesdemoiselles
+          MM     = messieurs
+          Mme    = Madame
+          Mmes   = Mesdames
+          Mo     = Métro
+          Mr     = Monsieur
+          ms     = manuscrit
+          NA     = non applicable
+          NB     = à noter
+          nbre   = nombre
+          ND     = notre Dame
+          NDA    = note de l'auteur
+          NDLR   = note de la rédaction
+          NDT    = note du traducteur
+          No     = numéro
+          NS     = notre Seigneur
+          ns     = nous
+          o      = octet
+          opt    = option
+          osef   = on s'en fout
+          p      = page
+          p/o    = par ordre
+          pb     = problème
+          pcq    = parce que
+          pdg    = président-directeur général
+          pdt    = pendant
+          pH     = potentiel hydrogène
+          pj     = pièce jointe
+          pk     = pour quoi
+          pl     = place
+          plrs   = plusieurs
+          pls    = plusieurs
+          pp     = par procuration
+          Pr     = professeur
+          Pre    = professeure
+          PS     = post scriptum
+          pt     = point
+          Pt     = président
+          pts    = points
+          pub    = publicité
+          pv     = procès verbal
+          qd     = quand
+          qed    = quod erat demonstrandum
+          qq     = quelque
+          qqch   = quelque chose
+          qqn    = quelqu'un
+          quest  = question
+          rd     = rond
+          rdc    = rez-de-chaussée
+          rdv    = rendez-vous
+          RDV    = rendez-vous
+          RIP    = repose en paix
+          ro     = recto
+          RSVP   = répondez, s'il vous plaît
+          rte    = route
+          réf    = référence
+          rép    = réponse
+          s      = siècle
+          s/     = sur
+          Sce    = service
+          SDF    = sans domicile fixe
+          sec    = seconde
+          sect   = section
+          sing   = singulier
+          slt    = salut
+          spec   = spécification
+          ssi    = si et seulement si
+          St     = Saint
+          Ste    = Sainte
+          Stes   = Saintes
+          STP    = S'il te plaît
+          Sts    = Saints
+          sté    = société
+          suiv   = suivant
+          suppl  = supplément
+          svp    = S'il vous plaît
+          tg     = ta gueule
+          tgv    = train à grande vitesse
+          tjrs   = toujours
+          tlm    = tout le monde
+          To     = Téra Octet
+          tq     = tel que
+          ts     = tous
+          TSVP   = Tournez SVP
+          tt     = tout
+          TTC    = toute taxe comprise
+          TVA    = Taxe sur la valeur ajoutée
+          TVB    = Tout va bien
+          tél    = téléphone
+          Ve     = veuve
+          vo     = verso
+          vol    = volume
+          vp     = vice-président
+          vs     = vous
+          Vte    = vicomte
+          Vtesse = vicomtesse
+          Vve    = veuve
+          XL     = eXtra Large
+          XS     = eXtra Small
+          yc     = y compris
+          ZA     = Zone d’Activité
+          ZAC    = Zone d’Aménagement Concerté
+          ZI     = Zone Industrielle
+          €      = Euro
+          €s     = Euros
