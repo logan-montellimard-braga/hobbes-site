@@ -33,11 +33,13 @@
           %hr
           %br
           - if user_signed_in?
-            = link_to "Partager ses fichiers", nil, :class => 'tooltipped center waves-effect waves-light btn btn-flat btn-large white-text light-green darken-1 btn-background-green', :"data-tooltip" => "Coming soon !"
+            = link_to "Partager ses templates", new_template_path, :class => 'center waves-effect waves-light btn btn-flat btn-large white-text light-green darken-1 btn-background-green'
             &nbsp;
-            = link_to 'Voir les autres soumissions', nil, :class => 'tooltipped waves-effect waves-light btn btn-flat btn-large white-text btn-background-brown', :"data-tooltip" => "Coming soon !"
+            = link_to 'Voir les autres soumissions', templates_path, :class => 'waves-effect waves-light btn btn-flat btn-large white-text btn-background-brown'
           - else
             = link_to "S'inscrire", new_user_registration_path, :class => 'center waves-effect waves-light btn btn-flat btn-large white-text light-green darken-1 btn-background-green'
             &nbsp;
             = link_to 'Se connecter', new_user_session_path, :class => 'waves-effect waves-light btn btn-flat btn-large white-text btn-background-brown'
+            %br
+            = link_to 'Voir les soumissions', templates_path, :class => 'light-green-text'
 

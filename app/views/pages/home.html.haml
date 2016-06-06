@@ -116,24 +116,30 @@
           %span.hide-on-small-only Hobbes
 
 
+:css
+  .embed-container { position: relative; padding-bottom: 56.25%; height: 0; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  .clearfix { clear: both; overflow: hidden; }
+
 %section#video
   .container.text-left
     .row
       .col.s12.m8
         %h5.arrowed-title Hobbes en action
-      .col.m9.s12
-        = image_tag "video_marron.png", class: :'responsive-img z-depth-1 video'
-      .col.m3.hide-on-small-only.content
-        %h6 Contenu
-        %ul
-          %li
-            %a{class: :tooltipped, :'data-tooltip' => '00:00', :'data-position' => 'top'} Installation
-          %li
-            %a{class: :tooltipped, :'data-tooltip' => '02:05', :'data-position' => 'top'} D&eacute;marrage rapide
-          %li
-            %a{class: :tooltipped, :'data-tooltip' => '04:20', :'data-position' => 'top'} Exemples d'utilisation
-          %li
-            %a{class: :tooltipped, :'data-tooltip' => '06:10', :'data-position' => 'top'} Pour aller plus loin
+      .clearfix
+      .embed-container
+        -# = image_tag "video_marron.png", class: :'responsive-img z-depth-1 video'
+        %iframe{:allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0", :height => "315", :src => "http://www.youtube.com/embed/TlwIjUbMH2E?rel=0&amp;showinfo=0", :title => "YouTube video player", :width => "515"}
+      -# .col.m3.hide-on-small-only.content
+      -#   %h6 Contenu
+      -#   %ul
+      -#     %li
+      -#       %a{class: '', :'data-tooltip' => '00:00', :'data-position' => 'top'} Installation
+      -#     %li
+      -#       %a{class: '', :'data-tooltip' => '02:05', :'data-position' => 'top'} D&eacute;marrage rapide
+      -#     %li
+      -#       %a{class: '', :'data-tooltip' => '04:20', :'data-position' => 'top'} Exemples d'utilisation
+      -#     %li
+      -#       %a{class: '', :'data-tooltip' => '06:10', :'data-position' => 'top'} Pour aller plus loin
     .row.last-call
       %hr
       .col.s12.center

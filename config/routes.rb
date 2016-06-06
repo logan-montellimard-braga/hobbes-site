@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'templates/index'
+
+  get 'templates/new'
+
+  get 'templates/create'
+
+  get 'templates/destroy'
+
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks', :registrations => :registrations }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -6,6 +14,8 @@ Rails.application.routes.draw do
   resources :users
   get 'contact' => 'contact_messages#new'
   resources :contact_messages, only: [:new, :create]
+
+  resources :templates, only: [:index, :show, :new, :create, :destroy]
 
   HighVoltage.configure do |config|
     config.home_page = 'home'

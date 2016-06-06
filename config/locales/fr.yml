@@ -130,6 +130,7 @@ fr:
   errors:
     format: "%{attribute} %{message}"
     messages: &errors_messages
+      extension_white_list_error: "format de fichier non autorisé"
       accepted: "doit être accepté(e)"
       blank: "doit être rempli(e)"
       present: "doit être vide"

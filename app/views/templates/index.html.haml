@@ -1,0 +1,33 @@
+- provide :title, "Templates de la communauté"
+-# - provide :desc, "l"
+
+= render 'shared/pages/band'
+
+%section.profil
+  .container
+    .row
+      .col.s12.m10.offset-m1.profil
+        %p
+          Retrouvez ici les templates soumis par les utilisateurs.
+        %blockquote
+          Attention : le contenu des templates envoy&eacute;s n'est pas analys&eacute;. Utilisez-les avec prudence.
+    .row
+      .col.s12.m10.offset-m1.profil
+        %br
+        %hr
+        %br
+    .row
+      .col.s12.m10.offset-m1.profil
+        %h5 Derniers templates
+        %br
+        - @templates.each do |tpl|
+          .col.l4.m6.s12
+            .card
+              .card-image
+                %a{:href => template_path(tpl)}
+                  = image_tag(tpl.image_url.force_encoding('UTF-8'), class: '')
+                  %span.card-title= tpl.name.force_encoding('UTF-8').capitalize
+              .card-content.grey-text
+                %p
+                  = link_to 'VOIR', template_path(tpl), class: 'light-green-text'
+                  = link_to 'TÉLÉCHARGER', tpl.attachment_url, class: 'light-green-text'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150110205331) do
+ActiveRecord::Schema.define(version: 20150327172051) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -76,6 +76,18 @@ ActiveRecord::Schema.define(version: 20150110205331) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id"
+
+  create_table "templates", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "attachment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "image"
+  end
+
+  add_index "templates", ["user_id"], name: "index_templates_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

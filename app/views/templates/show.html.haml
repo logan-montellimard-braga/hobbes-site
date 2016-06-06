@@ -1,0 +1,31 @@
+- provide :title, @template.name.force_encoding('UTF-8').capitalize
+- n = @template.user.name.blank? ? @template.user.email : @template.user.name
+
+= render 'shared/pages/band'
+
+%section.profil
+  .container
+    .row
+      .col.s12.m10.offset-m1.profil
+        .col.s12.l4.m6
+          = link_to image_tag(@template.image_url.force_encoding('UTF-8'), class: 'responsive-img'), @template.image_url
+        .col.s12.m6.l8.tmpl
+          %p
+            Ajout&eacute; il y a
+            %b<=  distance_of_time_in_words @template.created_at, Time.now
+            par
+            = link_to n, (user_path(@template.user_id))
+          %hr
+          %h4= @template.name.force_encoding('UTF-8').capitalize
+          %p= @template.description.force_encoding('UTF-8')
+          %br
+          %p
+            = link_to 'TÉLÉCHARGER', @template.attachment_url, class: 'btn btn-flat btn-large btn-background-green white-text'
+            &nbsp;
+            = link_to 'RETOUR', templates_path, class: 'btn btn-flat btn-large btn-background-brown white-text'
+            %br
+            - if current_user && current_user.id == @template.user_id
+              = link_to template_path(@template), data: { confirm: "Êtes-vous sûr ?" }, method: :delete, :class => 'white-text btn btn-flat red darken-1 waves-effect waves-light' do
+                %i.mdi-alert-warning
+                &nbsp;
+                Supprimer

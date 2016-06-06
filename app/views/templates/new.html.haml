@@ -1,0 +1,31 @@
+- provide :title, "Nouveau template"
+- provide :desc, "Enovyer un template personnalisé"
+= render 'shared/pages/band'
+
+.container
+  %br
+  .row
+    .col.s12.l8.offset-l2.m10.offset-m1.profil
+      %h5 Nouveau template
+  .row
+    .col.s12.l8.m10.offset-l2.offset-m1.profil.uploader
+      = simple_form_for @template do |f|
+        .row.form-inputs
+          .row
+            .col.s12
+              = f.input :name, required: false, autofocus: false
+          .row
+            .col.s12
+              = f.input :description, required: false, as: :text
+          .row
+            .col.s12
+              = f.input :attachment, as: :file
+          .row
+            .col.s12
+              = f.input :image, as: :file
+          .row
+            .col.s12
+              %br
+              = button_tag(type: 'submit', class: "btn btn-flat btn-large white-text brown col s12 btn-background-brown") do
+                Envoyer
+                %i.mdi-content-send

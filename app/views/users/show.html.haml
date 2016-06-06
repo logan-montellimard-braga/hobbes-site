@@ -19,7 +19,7 @@
               templates
               %span.text-right.badge2
                 &nbsp;
-                = templates_number
+                = @user.templates.length
           %li.tab.col
             %a{href: :'#favoris'}
               favoris
@@ -44,7 +44,10 @@
               que vous avez partag&eacute;s.
             - else
               partag&eacute;s par #{title}.
-          = render 'nothing_here'
+          - if @user.templates.length > 0
+            = render partial: 'templates_list', locals: {tpls: @user.templates}
+          - else
+            = render 'nothing_here'
       #favoris.col.s12.m10.offset-m1
         .row
           %p.grey-text.tip

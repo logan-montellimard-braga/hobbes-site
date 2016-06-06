@@ -1,0 +1,10 @@
+.row
+  .col.s12
+    %ul.collection
+      - tpls.each do |tpl|
+        %li.collection-item
+          %a{:href => template_path(tpl)}
+            = tpl.name.force_encoding('UTF-8') + ','
+            il y a
+            = distance_of_time_in_words tpl.created_at, Time.now
+            %i.mdi-navigation-arrow-forward.right

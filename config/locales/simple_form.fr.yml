@@ -22,6 +22,11 @@ fr:
         password: 'Mot de passe'
         password_confirmation: 'Confirmation'
         remember_me: " Se souvenir de moi"
+      template:
+        new:
+          name: "Nom du template"
+          description: "Description du template"
+          attachment: "Fichier zip"
       user:
         new:
           username: "Nom d'utilisateur"

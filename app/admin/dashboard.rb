@@ -32,5 +32,17 @@ ActiveAdmin.register_page "Dashboard" do
         end
       end
     end
+
+    columns do
+      column do
+        panel "Templates" do
+          ul do
+            Template.last(5).reverse.map do |tpl|
+              li link_to(tpl.name.force_encoding('UTF-8'), admin_template_path(tpl))
+            end
+          end
+        end
+      end
+    end
   end # content
 end

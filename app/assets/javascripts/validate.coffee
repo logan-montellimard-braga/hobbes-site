@@ -37,6 +37,18 @@ validator = $('form').validate (
       required: true
       minlength: 10
       maxlength: 1000
+    "template[name]":
+      required: true
+      minlength: 3
+      maxlength: 50
+    "template[description]":
+      required: true
+      minlength: 20
+      maxlength: 1000
+    "template[attachment]":
+      required: true
+    "template[image]":
+      required: true
 
   messages:
     "user[email]":
@@ -72,4 +84,16 @@ validator = $('form').validate (
       required: "Veuillez saisir votre message"
       minlength: $.validator.format "Veuillez saisir au moins {0} caractères"
       maxlength: $.validator.format "Veuillez saisir moins de {0} caractères"
+    "template[name]":
+      required: "Veuillez saisir un nom"
+      minlength: $.validator.format "Veuillez saisir au moins {0} caractères"
+      maxlength: $.validator.format "Veuillez saisir moins de {0} caractères"
+    "template[description]":
+      required: "Veuillez saisir une description"
+      minlength: $.validator.format "Veuillez saisir au moins {0} caractères"
+      maxlength: $.validator.format "Veuillez saisir moins de {0} caractères"
+    "template[attachment]":
+      required: "Veuillez choisir un fichier"
+    "template[image]":
+      required: "Veuillez choisir une image"
   )
